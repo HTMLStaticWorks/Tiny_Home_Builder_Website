@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TinyDream - Premium Tiny Home Builder</title>
+    <meta name="description"
+        content="Build your dream minimalist lifestyle with TinyDream. Premium, sustainable, and custom-built tiny homes for modern living.">
+
+    <!-- Bootstrap 5 & Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/style.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HomeAndConstructionBusiness",
+      "name": "TinyDream",
+      "image": "assets/hero.png",
+      "description": "Premium Tiny Home Builder",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Eco Lane",
+        "addressLocality": "Portland",
+        "addressRegion": "OR",
+        "postalCode": "97201",
+        "addressCountry": "US"
+      }
+    }
+    </script>
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader"
+        style="position: fixed; inset: 0; background: #fff; z-index: 9999; display: flex; align-items: center; justify-content: center; transition: opacity 0.5s;">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+                <i class="bi bi-house-heart text-primary me-2 fs-3"></i>
+                <span class="fs-4">TinyDream</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home 1</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home2.html">Home 2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="packages.html">Packages</a></li>
+                    <li class="nav-item"><a class="nav-link" href="floor-plans.html">Floor Plans</a></li>
+                    <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dashDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Dashboard
+                        </a>
+                        <ul class="dropdown-menu border-0 shadow-lg" aria-labelledby="dashDropdown">
+                            <li><a class="dropdown-item" href="dashboard-admin.html">Admin</a></li>
+                            <li><a class="dropdown-item" href="dashboard-user.html">User</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="login.html" class="nav-link border px-4 rounded-pill small">Login</a>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <a href="register.html" class="btn btn-primary btn-sm px-4 rounded-pill">Sign Up</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <button class="theme-toggle" aria-label="Toggle Dark Mode">
+                            <i class="bi bi-moon-stars"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-fullscreen fade-in text-center" style="background-image: url('assets/hero.png');">
+        <div class="container">
+            <h1 class="display-1">Build Your Dream <br><span class="text-accent">Tiny Home</span></h1>
+            <p class="hero-desc mx-auto">Experience the freedom of sustainable, modern living in a handcrafted tiny home
+                that
+                perfectly aligns with your minimalist lifestyle and environmental values.</p>
+            <div class="cta-group">
+                <a href="floor-plans.html" class="btn btn-primary">View Models</a>
+                <a href="contact.html" class="btn btn-outline">Start Building</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section-padding bg-light">
+        <div class="container text-center">
+            <div class="row justify-content-center mb-5 animate-on-scroll animate-up">
+                <div class="col-lg-7">
+                    <h2 class="mb-3">Why Choose TinyDream?</h2>
+                    <p class="text-secondary">We combine architectural excellence with sustainable building practices to
+                        create homes that last a lifetime.</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4 animate-on-scroll animate-up">
+                    <div class="custom-card">
+                        <i class="bi bi-tree text-primary fs-1 mb-3 d-block"></i>
+                        <h4 class="mb-3">Eco-Friendly</h4>
+                        <p class="text-secondary mb-0">Constructed with sustainable materials and energy-efficient
+                            systems to minimize your carbon footprint.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 animate-on-scroll animate-up" style="transition-delay: 0.2s;">
+                    <div class="custom-card">
+                        <i class="bi bi-palette text-primary fs-1 mb-3 d-block"></i>
+                        <h4 class="mb-3">Fully Custom</h4>
+                        <p class="text-secondary mb-0">Every floor plan is customizable. Choose your finishes, layout,
+                            and tech to suit your personality.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 animate-on-scroll animate-up" style="transition-delay: 0.4s;">
+                    <div class="custom-card">
+                        <i class="bi bi-shield-check text-primary fs-1 mb-3 d-block"></i>
+                        <h4 class="mb-3">Built to Last</h4>
+                        <p class="text-secondary mb-0">Our homes are built to RVIA standards using premium grade lumber
+                            and marine-grade plumbing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section-padding overflow-hidden">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0 animate-on-scroll animate-left">
+                    <img src="assets/kitchen.png" alt="Design Process" class="img-fluid rounded-4 shadow-lg">
+                </div>
+                <div class="col-lg-6 ps-lg-5 animate-on-scroll animate-right">
+                    <span class="text-primary fw-bold text-uppercase tracking-wider">Our Process</span>
+                    <h2 class="display-5 mb-4">From Blueprint to Backyard</h2>
+                    <div class="d-flex mb-4">
+                        <div class="me-4 text-primary fs-3">01</div>
+                        <div>
+                            <h5>Consult & Design</h5>
+                            <p class="text-secondary">We start with a detailed consultation to understand your needs and
+                                refine your custom floor plan.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-4">
+                        <div class="me-4 text-primary fs-3">02</div>
+                        <div>
+                            <h5>Precision Building</h5>
+                            <p class="text-secondary">Our expert craftsmen build your home in our controlled facility,
+                                ensuring quality at every step.</p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="me-4 text-primary fs-3">03</div>
+                        <div>
+                            <h5>Delivery & Set Up</h5>
+                            <p class="text-secondary">We deliver your home across the country and help with the final
+                                connection and setup.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Homes -->
+    <section class="section-padding bg-light">
+        <div class="container text-center">
+            <h2 class="mb-5">Our Signature Models</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="position-relative overflow-hidden rounded-4 shadow">
+                        <img src="assets/model1.png" alt="The Nordic" class="img-fluid">
+                        <div class="position-absolute bottom-0 start-0 w-100 p-4 glass">
+                            <div class="d-flex justify-content-between align-items-end">
+                                <div class="text-start">
+                                    <h4 class="mb-1">The Nordic</h4>
+                                    <p class="text-secondary mb-0">28ft | 320 sq. ft | Custom Interior</p>
+                                </div>
+                                <a href="floor-plans.html" class="btn btn-primary">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="position-relative overflow-hidden rounded-4 shadow">
+                        <img src="assets/model2.png" alt="The Summit" class="img-fluid">
+                        <div class="position-absolute bottom-0 start-0 w-100 p-4 glass">
+                            <div class="d-flex justify-content-between align-items-end">
+                                <div class="text-start">
+                                    <h4 class="mb-1">The Summit</h4>
+                                    <p class="text-secondary mb-0">34ft | 400 sq. ft | Luxury Loft</p>
+                                </div>
+                                <a href="floor-plans.html" class="btn btn-primary">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row justify-content-center text-center mb-5">
+                <div class="col-lg-6">
+                    <h2>Happy Minimalists</h2>
+                    <p class="text-secondary">Hear from our clients who have transitioned to their dream life.</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="custom-card h-100 text-center">
+                        <div class="mb-3 text-warning">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="fst-italic text-secondary">"Switching to a tiny home was the best decision for our
+                            family. TinyDream made the custom build process so seamless."</p>
+                        <hr>
+                        <h6 class="mb-0">Sarah & James</h6>
+                        <small class="text-muted">Owners of 'The Nordic'</small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="custom-card h-100 border-primary shadow-lg scale-up text-center">
+                        <div class="mb-3 text-warning">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="fst-italic text-secondary">"The craftsmanship is unmatched. Every corner is functional
+                            and beautiful. I love my minimalist haven!"</p>
+                        <hr>
+                        <h6 class="mb-0">Michael Chen</h6>
+                        <small class="text-muted">Digital Nomad</small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="custom-card h-100 text-center">
+                        <div class="mb-3 text-warning">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="fst-italic text-secondary">"Exceptional customer service from start to finish. They
+                            truly listen to your vision and bring it to life."</p>
+                        <hr>
+                        <h6 class="mb-0">Emma Watson</h6>
+                        <small class="text-muted">Retired Professional</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section-padding bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="display-5 fw-bold mb-4 text-white">Ready to Start Your Journey?</h2>
+            <p class="lead mb-5 opacity-75">Connect with our design team today for a free consultation on your dream
+                tiny home.</p>
+            <a href="contact.html" class="btn btn-light px-5 py-3 fw-bold">Contact Our Team</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <a class="fw-bold d-flex align-items-center mb-3" href="#">
+                        <i class="bi bi-house-heart text-primary me-2 fs-3"></i>
+                        <span class="fs-4">TinyDream</span>
+                    </a>
+                    <p class="text-secondary opacity-75">Building premium, handcrafted tiny homes for the modern
+                        minimalist. Sustainability and craftsmanship in every build.</p>
+                    <div class="d-flex gap-3 mt-4">
+                        <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i
+                                class="bi bi-facebook"></i></a>
+                        <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i
+                                class="bi bi-instagram"></i></a>
+                        <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i
+                                class="bi bi-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-5 mb-md-0">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <a href="about.html" class="footer-link">About Us</a>
+                    <a href="services.html" class="footer-link">Services</a>
+                    <a href="floor-plans.html" class="footer-link">Floor Plans</a>
+                    <a href="portfolio.html" class="footer-link">Portfolio</a>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-5 mb-md-0">
+                    <h5 class="mb-4">Support</h5>
+                    <a href="#" class="footer-link">Help Center</a>
+                    <a href="#" class="footer-link">FAQs</a>
+                    <a href="contact.html" class="footer-link">Contact</a>
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h5 class="mb-4">Newsletter</h5>
+                    <p class="text-secondary opacity-75 mb-4">Subscribe to get tiny home tips and build updates.</p>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Email address">
+                        <button class="btn btn-primary" type="button">Join</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-5 mb-4 border-secondary opacity-25">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="text-muted small mb-0">&copy; 2026 TinyDream Homes. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="text-muted small mb-0">Designed by Antigravity</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard - TinyDream | Track Your Build</title>
+    <!-- Styles -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        .sidebar-link {
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            color: var(--text-secondary);
+            border-radius: 10px;
+            margin-bottom: 5px;
+            transition: var(--transition);
+        }
+
+        .sidebar-link:hover,
+        .sidebar-link.active {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .sidebar-link i {
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        .finish-option-card {
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .finish-option-card.selected {
+            border-color: var(--primary) !important;
+            box-shadow: 0 0 10px rgba(var(--primary-rgb), 0.2);
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-lg-2 d-none d-lg-block dashboard-sidebar p-4 position-sticky top-0">
+                <a class="navbar-brand fw-bold d-flex align-items-center mb-5" href="index.html">
+                    <i class="bi bi-house-heart text-primary me-2 fs-3"></i>
+                    <span class="fs-4">TinyDream</span>
+                </a>
+                <div class="mt-4">
+                    <a href="dashboard-user.html#overview" class="sidebar-link active"><i
+                            class="bi bi-speedometer2"></i>
+                        Overview</a>
+                    <a href="#progress" class="sidebar-link"><i class="bi bi-gear-wide-connected"></i> Build
+                        Progress</a>
+                    <a href="#finishes" class="sidebar-link"><i class="bi bi-palette"></i> Select Finishes</a>
+                    <a href="#messages" class="sidebar-link"><i class="bi bi-chat-dots"></i> Messages <span
+                            class="badge bg-danger ms-auto">2</span></a>
+                    <a href="#payments" class="sidebar-link"><i class="bi bi-credit-card"></i> Payments</a>
+                    <a href="#" class="sidebar-link"><i class="bi bi-person"></i> Profile Settings</a>
+                </div>
+                <div class="mt-auto position-absolute bottom-0 start-0 w-100 p-4">
+                    <hr>
+                    <a href="login.html" class="sidebar-link text-danger"><i class="bi bi-box-arrow-left"></i>
+                        Logout</a>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="col-lg-10 p-lg-5 p-4">
+                <header class="d-flex justify-content-between align-items-center mb-5 slide-left">
+                    <div>
+                        <h2 class="fw-bold mb-1">Portfolio Performance</h2>
+                        <p class="text-secondary small mb-0">Today's Data Overview: March 19, 2026</p>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <button class="theme-toggle" aria-label="Toggle Dark Mode">
+                            <i class="bi bi-moon-stars"></i>
+                        </button>
+                        <div class="dropdown">
+                            <button class="btn btn-white shadow-sm dropdown-toggle rounded-pill px-4" type="button"
+                                data-bs-toggle="dropdown">
+                                <i class="bi bi-bell me-2"></i> Notifications
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end p-3 shadow-lg border-0 rounded-4" id="messages">
+                                <li class="mb-2"><small class="text-muted d-block uppercase fw-bold"
+                                        style="font-size: 9px;">TODAY</small>
+                                    <p class="mb-0 small">"Building Inspection (Phase 1) Passed!" - 2h ago</p>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li>
+                                    <p class="mb-0 small">"Interior Designer Maya Lopez sent a message." - Yesterday</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="theme-toggle shadow-sm"><i class="bi bi-moon-stars"></i></button>
+                    </div>
+                </header>
+
+                <div class="row g-4">
+                    <!-- Progress Card -->
+                    <div class="col-lg-8 pop-up" id="progress">
+                        <div class="custom-card bg-white border-0 shadow-sm">
+                            <h5 class="mb-4">Current Build Progress</h5>
+                            <div class="dashboard-progress-item mb-4" data-progress="65">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="fw-bold">Phase 2: Framing & Rough-In</span>
+                                    <span class="text-primary fw-bold">65%</span>
+                                </div>
+                                <div class="progress progress-track">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated"
+                                        role="progressbar"></div>
+                                </div>
+                            </div>
+
+                            <hr class="my-4">
+
+                            <div class="timeline ps-3 border-start border-2 border-primary border-opacity-25 pb-3">
+                                <div class="timeline-item mb-4 position-relative">
+                                    <div class="position-absolute translate-middle-x" style="left: -23px; top: 0;"><i
+                                            class="bi bi-check-circle-fill text-primary"></i></div>
+                                    <h6 class="mb-1">Phase 1: Trailer & Base</h6>
+                                    <p class="text-secondary small">Completed on Feb 12th, 2026. Iron Eagle Triple Axle
+                                        frame stabilized.</p>
+                                </div>
+                                <div class="timeline-item mb-4 position-relative">
+                                    <div class="position-absolute translate-middle-x" style="left: -23px; top: 0;"><i
+                                            class="bi bi-dot text-primary h3"></i></div>
+                                    <h6 class="mb-1">Phase 2: Wood Framing (Active)</h6>
+                                    <p class="text-secondary small">Stud wall construction and roof rafters installation
+                                        are in progress.</p>
+                                </div>
+                                <div class="timeline-item position-relative opacity-50">
+                                    <div class="position-absolute translate-middle-x" style="left: -23px; top: 0;"><i
+                                            class="bi bi-circle text-muted"></i></div>
+                                    <h6 class="mb-1">Phase 3: Sheathing & Siding</h6>
+                                    <p class="text-secondary small">Estimated start: March 5th, 2026.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Overview -->
+                    <div class="col-lg-4" id="payments">
+                        <div class="custom-card bg-white border-0 shadow-sm">
+                            <h5 class="mb-4">Financials</h5>
+                            <div class="p-3 bg-light rounded-4 mb-4">
+                                <small class="text-muted uppercase fw-bold d-block mb-1" style="font-size: 10px;">TOTAL
+                                    CONTRACT</small>
+                                <h3 class="fw-bold mb-0 text-primary">$89,450.00</h3>
+                            </div>
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="small text-secondary">Amount Paid:</span>
+                                    <span class="small fw-bold">$44,725.00</span>
+                                </div>
+                                <div class="d-flex justify-content-between text-danger">
+                                    <span class="small">Next Payment Due:</span>
+                                    <span class="small fw-bold">March 15th</span>
+                                </div>
+                            </div>
+                            <div class="text-center mt-auto">
+                                <button class="btn btn-primary px-4 py-2 mb-2">Make Payment</button>
+                                <button class="btn btn-outline-secondary btn-sm d-block mx-auto">View Invoices</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Finish Selection Section -->
+                    <div class="col-12 mt-4" id="finishes">
+                        <h4 class="mb-4">Pending Design Selections</h4>
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="finish-option-card card rounded-4 border p-3 border-opacity-25"
+                                    data-category="exterior-color">
+                                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=300&h=200&fit=crop"
+                                        class="rounded-3 mb-3" alt="Forest Green">
+                                    <h6>Exterior Siding: Forest Green</h6>
+                                    <p class="text-secondary small mb-3">Durable Vertical Cedar Panel.</p>
+                                    <div class="text-center">
+                                        <button class="btn btn-sm btn-outline-primary px-3">Select for Build</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="finish-option-card card rounded-4 border p-3 border-opacity-25"
+                                    data-category="exterior-color">
+                                    <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=300&h=200&fit=crop"
+                                        class="rounded-3 mb-3" alt="Charcoal Black">
+                                    <h6>Exterior Siding: Charcoal Black</h6>
+                                    <p class="text-secondary small mb-3">Sleek Metal Corrugated Look.</p>
+                                    <div class="text-center">
+                                        <button class="btn btn-sm btn-outline-primary px-3">Select for Build</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div
+                                    class="custom-card border-0 bg-primary bg-opacity-10 text-center d-flex flex-column align-items-center justify-content-center p-4">
+                                    <i class="bi bi-plus-circle text-primary fs-1 mb-3"></i>
+                                    <h5>Custom Finishes?</h5>
+                                    <p class="small text-secondary">Request a unique material or color that isn't listed
+                                        here.</p>
+                                    <button class="btn btn-link text-primary fw-bold">Contact Designer</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/main.js"></script>
+    <script src="assets/dashboard.js"></script>
+</body>
+
+</html>

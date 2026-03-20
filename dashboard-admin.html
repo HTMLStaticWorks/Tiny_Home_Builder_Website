@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - TinyDream | Backend Overview</title>
+    <!-- Styles -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        .sidebar-link {
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            color: var(--text-secondary);
+            border-radius: 10px;
+            margin-bottom: 5px;
+            transition: var(--transition);
+        }
+
+        .sidebar-link:hover,
+        .sidebar-link.active {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .sidebar-link i {
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        .stat-card {
+            border-radius: 20px;
+            padding: 30px;
+            background: var(--bg-secondary);
+            border: 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-lg-2 d-none d-lg-block dashboard-sidebar p-4 position-sticky top-0 border-end">
+                <a class="navbar-brand fw-bold d-flex align-items-center mb-5" href="index.html">
+                    <i class="bi bi-house-heart text-primary me-2 fs-3"></i>
+                    <span class="fs-4">TinyDream</span>
+                </a>
+                <div class="mt-4">
+                    <a href="dashboard-admin.html#overview" class="sidebar-link active"><i class="bi bi-grid-fill"></i>
+                        Dashboard</a>
+                    <a href="#builds" class="sidebar-link"><i class="bi bi-hammer"></i> Active Builds</a>
+                    <a href="#customers" class="sidebar-link"><i class="bi bi-people"></i> Customers</a>
+                    <a href="#finance" class="sidebar-link"><i class="bi bi-cash-stack"></i> Finance</a>
+                    <a href="#editor" class="sidebar-link"><i class="bi bi-pencil-square"></i> Content Editor</a>
+                    <a href="#" class="sidebar-link"><i class="bi bi-gear"></i> System Settings</a>
+                </div>
+                <div class="mt-auto pt-5">
+                    <hr>
+                    <a href="login.html" class="sidebar-link text-danger"><i class="bi bi-box-arrow-left"></i>
+                        Logout</a>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <main class="col-lg-10 p-lg-4 p-3" id="overview">
+                <header class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <h2 class="fw-bold mb-1">Portfolio Performance</h2>
+                        <p class="text-secondary small mb-0">Today's Data Overview: March 19, 2026</p>
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <button class="theme-toggle" aria-label="Toggle Dark Mode">
+                            <i class="bi bi-moon-stars"></i>
+                        </button>
+                        <span class="badge bg-primary-subtle text-primary p-2 rounded-circle"><i
+                                class="bi bi-person-fill"></i></span>
+                    </div>
+                </header>
+
+                <!-- Statistics Grid -->
+                <div class="row g-4 mb-4">
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <span class="text-secondary small fw-bold">Active Builds</span>
+                            <div class="d-flex align-items-center mt-2">
+                                <h2 class="fw-bold mb-0 admin-stat-counter">14</h2>
+                                <span class="badge bg-success-subtle text-success ms-auto">+2 this month</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3" id="finance">
+                        <div class="stat-card">
+                            <span class="text-secondary small fw-bold">Gross Revenue</span>
+                            <div class="d-flex align-items-center mt-2">
+                                <h2 class="fw-bold mb-0">$<span class="admin-stat-counter">542000</span></h2>
+                                <span class="badge bg-info-subtle text-info ms-auto">High Perf</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <span class="text-secondary small fw-bold">Customer NPS</span>
+                            <div class="d-flex align-items-center mt-2">
+                                <h2 class="fw-bold mb-0 admin-stat-counter">92</h2>
+                                <span class="badge bg-success-subtle text-success ms-auto">Excellent</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <span class="text-secondary small fw-bold">Messages</span>
+                            <div class="d-flex align-items-center mt-2">
+                                <h2 class="fw-bold mb-0 admin-stat-counter">28</h2>
+                                <span class="badge bg-danger ms-auto">Pending</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects List Table -->
+                <div class="custom-card bg-white border-0 shadow-sm overflow-hidden p-0 mb-4" id="builds">
+                    <div class="p-4 d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Pipeline Overview</h5>
+                        <button class="btn btn-primary btn-sm rounded-pill">+ Add New Build</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle border-0 mb-0">
+                            <thead class="bg-light">
+                                <tr>
+                                    <th class="p-4 border-0">Client Name</th>
+                                    <th class="p-4 border-0">Model Type</th>
+                                    <th class="p-4 border-0">Stage</th>
+                                    <th class="p-4 border-0">Status</th>
+                                    <th class="p-4 border-0">Budget</th>
+                                    <th class="p-4 border-0">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="p-4 border-0">
+                                        <h6 class="mb-0 fw-bold">John Doe</h6>
+                                        <small class="text-muted">john@example.com</small>
+                                    </td>
+                                    <td class="p-4 border-0">The Nordic</td>
+                                    <td class="p-4 border-0">Phase 2: Framing</td>
+                                    <td class="p-4 border-0"><span class="badge bg-primary px-3 py-2 rounded-pill">In
+                                            Progress</span></td>
+                                    <td class="p-4 border-0 fw-bold">$84,600</td>
+                                    <td class="p-4 border-0">
+                                        <button class="btn btn-sm btn-light border admin-delete-item me-2"><i
+                                                class="bi bi-trash"></i></button>
+                                        <button class="btn btn-sm btn-light border"><i
+                                                class="bi bi-pencil"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 border-0">
+                                        <h6 class="mb-0 fw-bold">Sarah Williams</h6>
+                                        <small class="text-muted">sarah.w@u-mail.com</small>
+                                    </td>
+                                    <td class="p-4 border-0">The Summit</td>
+                                    <td class="p-4 border-0">Phase 5: Interior Finishing</td>
+                                    <td class="p-4 border-0"><span
+                                            class="badge bg-warning text-dark px-3 py-2 rounded-pill">Urgent
+                                            Attention</span></td>
+                                    <td class="p-4 border-0 fw-bold">$115,000</td>
+                                    <td class="p-4 border-0">
+                                        <button class="btn btn-sm btn-light border admin-delete-item me-2"><i
+                                                class="bi bi-trash"></i></button>
+                                        <button class="btn btn-sm btn-light border"><i
+                                                class="bi bi-pencil"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4 border-0">
+                                        <h6 class="mb-0 fw-bold">Michael Chen</h6>
+                                        <small class="text-muted">m.chen@net.com</small>
+                                    </td>
+                                    <td class="p-4 border-0">The Breeze (20ft)</td>
+                                    <td class="p-4 border-0">Phase 1: Trailer Base</td>
+                                    <td class="p-4 border-0"><span class="badge bg-primary px-3 py-2 rounded-pill">In
+                                            Progress</span></td>
+                                    <td class="p-4 border-0 fw-bold">$62,000</td>
+                                    <td class="p-4 border-0">
+                                        <button class="btn btn-sm btn-light border admin-delete-item me-2"><i
+                                                class="bi bi-trash"></i></button>
+                                        <button class="btn btn-sm btn-light border"><i
+                                                class="bi bi-pencil"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Recent Messages Sidebar -->
+                <div class="row" id="editor">
+                    <div class="col-lg-12">
+                        <div class="custom-card border-0 bg-white shadow-sm">
+                            <h5 class="mb-4">Recent Client Inquiries (Content Management)</h5>
+                            <div class="d-flex align-items-center mb-4 pb-3 border-bottom">
+                                <div class="flex-shrink-0 bg-primary-subtle rounded-circle p-3 text-primary"><i
+                                        class="bi bi-envelope"></i></div>
+                                <div class="ms-3 flex-grow-1">
+                                    <h6 class="mb-1">Inquiry for Custom Triple Axel Build</h6>
+                                    <p class="text-secondary small mb-0">From Emma Stone: "I saw the Oregon escape and
+                                        want something similar..."</p>
+                                </div>
+                                <button class="btn btn-link text-primary p-0 fw-bold">Review</button>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="flex-shrink-0 bg-info-subtle rounded-circle p-3 text-info"><i
+                                        class="bi bi-image"></i></div>
+                                <div class="ms-3 flex-grow-1">
+                                    <h6 class="mb-1">Finish Selection Approval Needed</h6>
+                                    <p class="text-secondary small mb-0">Project TH-0925: Client selected Mahogany
+                                        siding. Confirm stock?</p>
+                                </div>
+                                <button class="btn btn-link text-primary p-0 fw-bold">Approve</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/main.js"></script>
+    <script src="assets/dashboard.js"></script>
+</body>
+
+</html>

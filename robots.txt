@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tinydreamhomes.com/sitemap.xml
