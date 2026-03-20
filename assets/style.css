@@ -298,16 +298,23 @@ html {
     padding: 16px 0;
     transition: var(--transition);
     z-index: 1050;
-    display: flex;
-    align-items: flex-start;
-    /* Ensure header stays at top when menu expands */
 }
 
 .navbar .container {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+}
+
+/* Mobile-only menu behavior to prevent branding from pushing down when menu expands */
+@media (max-width: 991.98px) {
+    .navbar {
+        align-items: flex-start;
+    }
+
+    .navbar .container {
+        flex-wrap: wrap;
+    }
 }
 
 .navbar:not(.scrolled) {
@@ -714,5 +721,30 @@ footer {
 
     .navbar-nav {
         gap: 0.5rem;
+    }
+}
+
+/* Tablet Optimizations to keep menu on one line between 992px and 1200px */
+@media (min-width: 992px) and (max-width: 1200px) {
+    .nav-link {
+        margin: 0 4px !important;
+        font-size: 0.85rem !important;
+    }
+
+    .navbar-brand .fs-4 {
+        font-size: 1.25rem !important;
+        /* Smaller brand text */
+    }
+
+    .navbar .container {
+        padding-left: 15px;
+        padding-right: 15px;
+        /* Minimize global padding to fit menu */
+    }
+
+    .navbar .btn,
+    .navbar .nav-link.border {
+        padding: 5px 12px !important;
+        font-size: 0.8rem !important;
     }
 }
