@@ -376,24 +376,18 @@ html {
     color: var(--primary);
 }
 
-.navbar:not(.scrolled) .navbar-brand {
-    color: var(--text-primary) !important;
-}
-
 [data-bs-theme="dark"] .navbar:not(.scrolled) .nav-link {
     color: #ffffff;
-}
-
-[data-bs-theme="dark"] .navbar:not(.scrolled) .navbar-brand {
-    color: #ffffff !important;
 }
 
 .navbar.scrolled .nav-link {
     color: var(--text-primary);
 }
 
-.navbar.scrolled .navbar-brand {
+/* Unified Logo Styles forever */
+.navbar-brand {
     color: var(--text-primary) !important;
+    text-shadow: 0 0 15px var(--bg-color), 0 0 25px var(--bg-color);
 }
 
 /* Full-Screen Centered Hero Section (Fixed) */
@@ -452,12 +446,8 @@ html[data-bs-theme="dark"] .navbar .navbar-toggler-icon {
     transition: var(--transition);
 }
 
-.navbar:not(.scrolled) .navbar-brand i {
-    color: var(--text-primary) !important;
-}
-
-[data-bs-theme="dark"] .navbar:not(.scrolled) .navbar-brand i {
-    color: #ffffff !important;
+.navbar-brand i {
+    color: var(--primary) !important;
 }
 
 .hero-fullscreen .display-1,
