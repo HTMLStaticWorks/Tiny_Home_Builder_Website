@@ -12,12 +12,12 @@
     <style>
         body {
             background-color: var(--bg-color);
-            height: 100vh;
-            overflow: hidden;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 16px;
+            padding: 24px 16px;
+            overflow-y: auto;
         }
 
         .custom-card {
@@ -62,7 +62,7 @@
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-lg-5">
-                <div class="custom-card border-0 shadow-lg p-xl-5 p-4 text-center">
+                <div class="custom-card mx-auto border-0 shadow-lg p-xl-5 p-4 text-center">
                     <a href="index.html" class="navbar-brand fw-bold mb-3 d-inline-block">
                         <i class="bi bi-house-heart text-primary me-2 fs-3"></i>
                         <span class="fs-4">TinyDream</span>
@@ -84,12 +84,12 @@
                                     placeholder="jane@example.com" required>
                             </div>
                             <div class="col-md-6 mb-2">
-                                <label class="form-label fw-bold small text-uppercase text-dark">Password</label>
+                                <label class="form-label fw-bold small text-uppercase">Password</label>
                                 <input type="password" class="form-control bg-light border-0 py-2"
                                     placeholder="••••••••" required>
                             </div>
                             <div class="col-md-6 mb-2">
-                                <label class="form-label fw-bold small text-uppercase text-dark">Confirm</label>
+                                <label class="form-label fw-bold small text-uppercase">Confirm</label>
                                 <input type="password" class="form-control bg-light border-0 py-2"
                                     placeholder="••••••••" required>
                             </div>
@@ -112,6 +112,19 @@
                         <button type="submit" class="btn btn-primary w-100 py-2 fw-bold mb-3 mt-1">Create
                             Account</button>
                     </form>
+
+                    <div class="d-flex align-items-center mb-3">
+                        <hr class="flex-grow-1 border-secondary opacity-25">
+                        <span class="mx-3 text-muted" style="font-size: 10px;">OR CONTINUE WITH</span>
+                        <hr class="flex-grow-1 border-secondary opacity-25">
+                    </div>
+
+                    <div class="d-flex gap-2 mb-4">
+                        <button class="btn btn-outline-secondary w-100 py-2 small"><i class="bi bi-google me-2"></i>
+                            Google</button>
+                        <button class="btn btn-outline-secondary w-100 py-2 small"><i class="bi bi-facebook me-2"></i>
+                            Facebook</button>
+                    </div>
 
                     <p class="text-muted" style="font-size: 12px; margin-bottom: 0;">Already have an account? <a
                             href="login.html"

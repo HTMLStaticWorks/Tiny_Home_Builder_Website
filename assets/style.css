@@ -431,12 +431,16 @@ html {
 }
 
 /* Navbar Toggle Optimization */
-.navbar:not(.scrolled) .navbar-toggler-icon {
-    filter: none;
+.navbar-toggler-icon {
+    transition: filter 0.3s ease;
 }
 
-[data-bs-theme="dark"] .navbar:not(.scrolled) .navbar-toggler-icon {
-    filter: invert(1);
+html[data-bs-theme="light"] .navbar:not(.scrolled) .navbar-toggler-icon {
+    filter: invert(1) brightness(2);
+}
+
+html[data-bs-theme="dark"] .navbar .navbar-toggler-icon {
+    filter: none !important;
 }
 
 .navbar .btn-sm {
@@ -543,6 +547,11 @@ html {
 .custom-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 35px var(--shadow-color);
+}
+
+.card-img-top {
+    height: 260px;
+    object-fit: cover;
 }
 
 /* Dashboard Styles */
