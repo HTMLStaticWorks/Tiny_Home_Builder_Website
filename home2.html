@@ -12,7 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/style.css?v=10">
 </head>
 
 <body>
@@ -20,17 +20,17 @@
     <!-- Header / Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top scrolled">
         <div class="container">
-            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
-                <i class="bi bi-house-heart text-primary me-2 fs-3"></i>
-                <span class="fs-4">TinyDream</span>
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-house-heart"></i>
+                <span>TinyDream</span>
             </a>
             <div class="d-flex align-items-center order-lg-3 gap-2 ms-auto ms-lg-3">
                 <button class="theme-toggle" aria-label="Toggle Dark Mode">
                     <i class="bi bi-moon-stars"></i>
                 </button>
-                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                <button class="navbar-toggler border-0 d-lg-none" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
+                    <i class="bi bi-list"></i>
                 </button>
             </div>
             <div class="collapse navbar-collapse order-lg-2" id="navbarNav">
@@ -53,10 +53,10 @@
                         </ul>
                     </li>
                     <li class="nav-item ms-lg-3">
-                        <a href="login.html" class="nav-link border px-4 rounded-pill small">Login</a>
+                        <a href="login.html" class="btn btn-outline-primary btn-sm px-4 rounded-pill navbar-btn">Login</a>
                     </li>
                     <li class="nav-item ms-lg-2">
-                        <a href="register.html" class="btn btn-primary btn-sm px-4 rounded-pill">Sign Up</a>
+                        <a href="register.html" class="btn btn-primary btn-sm px-4 rounded-pill navbar-btn">Sign Up</a>
                     </li>
                 </ul>
             </div>
@@ -120,14 +120,13 @@
                     <div class="card border-0 shadow-sm h-100">
                         <img src="https://images.pexels.com/photos/36098090/pexels-photo-36098090.jpeg"
                             class="card-img-top rounded-4" alt="Kitchen Guide">
-                        <div class="card-body px-0">
-                            <span class="text-primary small fw-bold">Design</span>
-                            <h5 class="card-title mt-2">Maximizing Small Kitchen Storage</h5>
-                            <p class="card-text text-secondary">Discover how to fit a full chef's kitchen into under 40
+                        <div class="card-body p-4 d-flex flex-column">
+                            <span class="text-primary small fw-bold text-uppercase tracking-wider">Design</span>
+                            <h5 class="card-title mt-2 fw-bold">Maximizing Small Kitchen Storage</h5>
+                            <p class="card-text text-secondary mb-4">Discover how to fit a full chef's kitchen into under 40
                                 sq ft of space.</p>
-                            <div class="text-center mt-3">
-                                <a href="blog-detail.html" class="text-primary fw-bold text-decoration-underline">Read
-                                    More</a>
+                            <div class="mt-auto">
+                                <a href="blog-detail.html" class="read-more-link">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -136,14 +135,13 @@
                     <div class="card border-0 shadow-sm h-100">
                         <img src="https://images.pexels.com/photos/26837160/pexels-photo-26837160.jpeg"
                             class="card-img-top rounded-4" alt="Bedroom Guide">
-                        <div class="card-body px-0">
-                            <span class="text-primary small fw-bold">Lifestyle</span>
-                            <h5 class="card-title mt-2">Creating the Ultimate Loft Sanctuary</h5>
-                            <p class="card-text text-secondary">A guide to lighting and multi-functional furniture for
+                        <div class="card-body p-4 d-flex flex-column">
+                            <span class="text-primary small fw-bold text-uppercase tracking-wider">Lifestyle</span>
+                            <h5 class="card-title mt-2 fw-bold">Creating the Ultimate Loft Sanctuary</h5>
+                            <p class="card-text text-secondary mb-4">A guide to lighting and multi-functional furniture for
                                 your sleeping loft.</p>
-                            <div class="text-center mt-3">
-                                <a href="blog-detail.html" class="text-primary fw-bold text-decoration-underline">Read
-                                    More</a>
+                            <div class="mt-auto">
+                                <a href="blog-detail.html" class="read-more-link">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -152,14 +150,13 @@
                     <div class="card border-0 shadow-sm h-100">
                         <img src="https://images.pexels.com/photos/29365994/pexels-photo-29365994.jpeg"
                             class="card-img-top rounded-4" alt="Exterior Tips">
-                        <div class="card-body px-0">
-                            <span class="text-primary small fw-bold">Exterior</span>
-                            <h5 class="card-title mt-2">Choosing the Right Materials for Off-Grid</h5>
-                            <p class="card-text text-secondary">A comparison of siding materials for durability and
+                        <div class="card-body p-4 d-flex flex-column">
+                            <span class="text-primary small fw-bold text-uppercase tracking-wider">Exterior</span>
+                            <h5 class="card-title mt-2 fw-bold">Choosing the Right Materials for Off-Grid</h5>
+                            <p class="card-text text-secondary mb-4">A comparison of siding materials for durability and
                                 eco-impact.</p>
-                            <div class="text-center mt-3">
-                                <a href="blog-detail.html" class="text-primary fw-bold text-decoration-underline">Read
-                                    More</a>
+                            <div class="mt-auto">
+                                <a href="blog-detail.html" class="read-more-link">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -201,9 +198,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mb-5 mb-lg-0">
-                    <a class="fw-bold d-flex align-items-center mb-3" href="#">
-                        <i class="bi bi-house-heart text-primary me-2 fs-3"></i>
-                        <span class="fs-4">TinyDream</span>
+                    <a class="footer-brand mb-3" href="index.html">
+                        <i class="bi bi-house-heart"></i>
+                        <span>TinyDream</span>
                     </a>
                     <p class="text-secondary opacity-75">Building premium, handcrafted tiny homes for the modern
                         minimalist. Sustainability and craftsmanship in every build.</p>
@@ -213,7 +210,7 @@
                         <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i
                                 class="bi bi-instagram"></i></a>
                         <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i
-                                class="bi bi-twitter"></i></a>
+                                class="bi bi-twitter-x"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-4 mb-5 mb-md-0">

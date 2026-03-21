@@ -123,6 +123,35 @@ a {
     transition: var(--transition);
 }
 
+.share-link {
+    color: var(--primary);
+    text-decoration: none;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.share-link:hover {
+    color: var(--accent);
+    transform: translateY(-3px) scale(1.1);
+}
+
+/* Button Overrides */
+.btn {
+    transition: var(--transition);
+}
+
+.btn-light:hover, .btn-light:focus {
+    background-color: var(--accent) !important;
+    border-color: var(--accent) !important;
+    color: #ffffff !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+[data-bs-theme="dark"] .btn-light:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
 /* Layout & Spacing */
 .section-padding {
     padding: 100px 0;
@@ -273,10 +302,43 @@ html {
     transition: var(--transition);
 }
 
-.btn-primary:hover {
-    background-color: #3d5535;
-    border-color: #3d5535;
-    transform: translateY(-2px) scale(1.05);
+.btn.btn-primary:hover {
+    background-color: #3d5535 !important;
+    border-color: #3d5535 !important;
+    color: #fff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Navbar Button Hover Effects & Height Balancing */
+.navbar-btn {
+    height: 40px !important;
+    min-height: 40px !important;
+    min-width: 110px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    white-space: nowrap !important;
+    padding: 0 20px !important;
+    border-radius: 50px !important;
+    transition: var(--transition) !important;
+    box-sizing: border-box !important;
+    line-height: normal !important;
+}
+
+.navbar-btn.btn-outline-primary {
+    border: 1px solid var(--primary) !important;
+    color: var(--primary) !important;
+    background-color: transparent !important;
+}
+
+.navbar-btn.btn-outline-primary:hover {
+    background-color: var(--primary) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 103, 65, 0.2);
 }
 
 .btn-outline-primary {
@@ -362,6 +424,10 @@ html {
     transform: scaleX(1);
 }
 
+.nav-link.border::after {
+    display: none !important;
+}
+
 .nav-link.active {
     color: var(--primary) !important;
 }
@@ -437,17 +503,27 @@ html[data-bs-theme="dark"] .navbar .navbar-toggler-icon {
     filter: none !important;
 }
 
-.navbar .btn-sm {
-    padding: 6px 16px;
-    /* Tighter buttons for the dense menu */
+
+.navbar-brand, .footer-brand, .dashboard-brand {
+    display: inline-flex !important;
+    align-items: center !important;
+    font-weight: 700 !important;
+    color: var(--text-primary) !important;
+    text-decoration: none !important;
 }
 
-.navbar-brand span {
-    transition: var(--transition);
-}
-
-.navbar-brand i {
+.navbar-brand i, .footer-brand i, .dashboard-brand i {
     color: var(--primary) !important;
+    font-size: 1.75rem !important; /* This is fs-3 */
+    margin-right: 0.5rem !important;
+    line-height: 1 !important;
+}
+
+.navbar-brand span, .footer-brand span, .dashboard-brand span {
+    font-size: 1.5rem !important; /* This is fs-4 */
+    color: var(--text-primary) !important;
+    transition: var(--transition);
+    line-height: 1 !important;
 }
 
 .hero-fullscreen .display-1,
@@ -527,21 +603,104 @@ html[data-bs-theme="dark"] .navbar .navbar-toggler-icon {
 
 /* Cards */
 .custom-card {
-    background: var(--bg-secondary);
-    border-radius: 15px;
+    background: var(--bg-color); /* Updated for better contrast */
+    border-radius: 20px;
     border: 1px solid var(--border-color);
-    padding: 1.5rem;
+    padding: 3rem 2rem;
     transition: var(--transition);
+    max-width: 480px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .custom-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 35px var(--shadow-color);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px var(--shadow-color);
+}
+
+.card-highlight {
+    border: 2px solid var(--accent) !important;
+    position: relative;
+    z-index: 2;
+}
+
+[data-bs-theme="dark"] .card-highlight {
+    box-shadow: 0 0 30px rgba(212, 163, 115, 0.15) !important;
 }
 
 .card-img-top {
     height: 260px;
     object-fit: cover;
+}
+
+.read-more-link {
+    color: var(--accent) !important;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.read-more-link::after {
+    content: "→";
+    margin-left: 8px;
+    transform: translateX(-5px);
+    transition: var(--transition);
+}
+
+.read-more-link:hover {
+    color: var(--primary) !important;
+}
+
+[data-bs-theme="dark"] .read-more-link:hover {
+    color: #ffffff !important;
+}
+
+.read-more-link:hover::after {
+    transform: translateX(0);
+}
+
+/* Navbar Mobile Toggler Fix - Font Based for Perfect Contrast */
+.navbar-toggler {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    color: var(--text-primary) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.navbar-toggler i {
+    font-size: 1.75rem;
+    line-height: 1;
+}
+
+/* Global Sidebar Links */
+.sidebar-link {
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    color: var(--text-secondary);
+    border-radius: 10px;
+    margin-bottom: 5px;
+    transition: var(--transition);
+}
+
+.sidebar-link:hover,
+.sidebar-link.active {
+    background: var(--primary);
+    color: #fff;
+}
+
+.sidebar-link i {
+    margin-right: 15px;
+    font-size: 1.2rem;
 }
 
 /* Dashboard Styles */
@@ -550,6 +709,47 @@ html[data-bs-theme="dark"] .navbar .navbar-toggler-icon {
     border-right: 1px solid var(--border-color);
 }
 
+[data-bs-theme="dark"] .admin-delete-item {
+    background-color: rgba(220, 53, 69, 0.15) !important;
+    border-color: rgba(220, 53, 69, 0.3) !important;
+    color: #ff6b6b !important;
+}
+
+[data-bs-theme="dark"] .admin-delete-item:hover {
+    background-color: #dc3545 !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(220, 53, 69, 0.3);
+}
+
+[data-bs-theme="dark"] .admin-edit-item {
+    background-color: rgba(13, 110, 253, 0.15) !important;
+    border-color: rgba(13, 110, 253, 0.3) !important;
+    color: #4dabf7 !important;
+}
+
+[data-bs-theme="dark"] .admin-edit-item:hover {
+    background-color: #0d6efd !important;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3);
+}
+
+/* Dashboard Layout Fixes */
+main .custom-card, 
+main .stat-card {
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+}
+
+.table-responsive {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+/* Progress Tracker */
 .progress-track {
     height: 8px;
     background: #eee;
@@ -625,6 +825,15 @@ footer {
     color: var(--primary) !important;
     transform: translateY(-5px) scale(1.1);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+footer .btn.rounded-circle {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .contact-card {
@@ -726,24 +935,45 @@ footer {
 /* Tablet Optimizations to keep menu on one line between 992px and 1200px */
 @media (min-width: 992px) and (max-width: 1200px) {
     .nav-link {
-        margin: 0 4px !important;
-        font-size: 0.85rem !important;
+        margin: 0 !important;
+        font-size: 0.8rem !important;
+        padding-left: 4px !important;
+        padding-right: 4px !important;
     }
 
     .navbar-brand .fs-4 {
-        font-size: 1.25rem !important;
-        /* Smaller brand text */
+        font-size: 1.1rem !important;
+    }
+
+    .navbar-brand i {
+        font-size: 1.3rem !important;
+        margin-right: 4px !important;
     }
 
     .navbar .container {
-        padding-left: 15px;
-        padding-right: 15px;
-        /* Minimize global padding to fit menu */
+        padding-left: 10px;
+        padding-right: 10px;
+        max-width: 100% !important;
     }
 
-    .navbar .btn,
-    .navbar .nav-link.border {
-        padding: 5px 12px !important;
-        font-size: 0.8rem !important;
+    .navbar-btn {
+        min-width: 70px !important;
+        padding: 0 8px !important;
+        font-size: 12px !important;
+        height: 32px !important;
+        min-height: 32px !important;
+    }
+
+    .nav-item.ms-lg-3, .nav-item.ms-lg-2 {
+        margin-left: 0.1rem !important;
+    }
+
+    .d-flex.align-items-center.order-lg-3 {
+        margin-left: 0.25rem !important;
+        gap: 0.25rem !important;
+    }
+    
+    .navbar-nav {
+        gap: 0 !important;
     }
 }

@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/style.css?v=10">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -54,17 +54,17 @@
     <!-- Header / Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
-                <i class="bi bi-house-heart text-primary me-2 fs-3"></i>
-                <span class="fs-4">TinyDream</span>
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-house-heart"></i>
+                <span>TinyDream</span>
             </a>
             <div class="d-flex align-items-center order-lg-3 gap-2 ms-auto ms-lg-3">
                 <button class="theme-toggle" aria-label="Toggle Dark Mode">
                     <i class="bi bi-moon-stars"></i>
                 </button>
-                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                <button class="navbar-toggler border-0 d-lg-none" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
+                    <i class="bi bi-list"></i>
                 </button>
             </div>
             <div class="collapse navbar-collapse order-lg-2" id="navbarNav">
@@ -87,10 +87,11 @@
                         </ul>
                     </li>
                     <li class="nav-item ms-lg-3">
-                        <a href="login.html" class="nav-link border px-4 rounded-pill small">Login</a>
+                        <a href="login.html"
+                            class="btn btn-outline-primary btn-sm px-4 rounded-pill navbar-btn">Login</a>
                     </li>
                     <li class="nav-item ms-lg-2">
-                        <a href="register.html" class="btn btn-primary btn-sm px-4 rounded-pill">Sign Up</a>
+                        <a href="register.html" class="btn btn-primary btn-sm px-4 rounded-pill navbar-btn">Sign Up</a>
                     </li>
                 </ul>
             </div>
@@ -123,7 +124,7 @@
             </div>
             <div class="row g-4">
                 <div class="col-md-4 animate-on-scroll animate-up">
-                    <div class="custom-card">
+                    <div class="custom-card h-100">
                         <i class="bi bi-tree text-primary fs-1 mb-3 d-block"></i>
                         <h4 class="mb-3">Eco-Friendly</h4>
                         <p class="text-secondary mb-0">Constructed with sustainable materials and energy-efficient
@@ -131,15 +132,15 @@
                     </div>
                 </div>
                 <div class="col-md-4 animate-on-scroll animate-up" style="transition-delay: 0.2s;">
-                    <div class="custom-card">
+                    <div class="custom-card h-100">
                         <i class="bi bi-palette text-primary fs-1 mb-3 d-block"></i>
                         <h4 class="mb-3">Fully Custom</h4>
                         <p class="text-secondary mb-0">Every floor plan is customizable. Choose your finishes, layout,
-                            and tech to suit your personality.</p>
+                            and tech to suit your personality perfectly.</p>
                     </div>
                 </div>
                 <div class="col-md-4 animate-on-scroll animate-up" style="transition-delay: 0.4s;">
-                    <div class="custom-card">
+                    <div class="custom-card h-100">
                         <i class="bi bi-shield-check text-primary fs-1 mb-3 d-block"></i>
                         <h4 class="mb-3">Built to Last</h4>
                         <p class="text-secondary mb-0">Our homes are built to RVIA standards using premium grade lumber
@@ -196,13 +197,13 @@
             <div class="row g-4">
                 <div class="col-md-6">
                     <div class="position-relative overflow-hidden rounded-4 shadow">
-                        <img src="https://images.pexels.com/photos/2360673/pexels-photo-2360673.jpeg" alt="The Nordic"
-                            class="img-fluid w-100" style="height: 400px; object-fit: cover;">
-                        <div class="position-absolute bottom-0 start-0 w-100 p-4 glass">
+                        <img src="assets/model1.png" alt="The Nordic" class="img-fluid w-100"
+                            style="height: 400px; object-fit: cover; object-position: center bottom;">
+                        <div class="position-absolute bottom-0 start-0 w-100 p-4 glass border-0 border-top">
                             <div class="d-flex justify-content-between align-items-end">
                                 <div class="text-start">
-                                    <h4 class="mb-1">The Nordic</h4>
-                                    <p class="text-secondary mb-0">28ft | 320 sq. ft | Custom Interior</p>
+                                    <h4 class="mb-1 text-white">The Nordic</h4>
+                                    <p class="text-white opacity-75 mb-0">28ft | 320 sq. ft | Custom Interior</p>
                                 </div>
                                 <a href="packages.html" class="btn btn-primary">Details</a>
                             </div>
@@ -211,13 +212,13 @@
                 </div>
                 <div class="col-md-6">
                     <div class="position-relative overflow-hidden rounded-4 shadow">
-                        <img src="https://images.pexels.com/photos/5177211/pexels-photo-5177211.jpeg" alt="The Summit"
-                            class="img-fluid w-100" style="height: 400px; object-fit: cover;">
-                        <div class="position-absolute bottom-0 start-0 w-100 p-4 glass">
+                        <img src="assets/model2.png" alt="The Summit" class="img-fluid w-100"
+                            style="height: 400px; object-fit: cover; object-position: center bottom;">
+                        <div class="position-absolute bottom-0 start-0 w-100 p-4 glass border-0 border-top">
                             <div class="d-flex justify-content-between align-items-end">
                                 <div class="text-start">
-                                    <h4 class="mb-1">The Summit</h4>
-                                    <p class="text-secondary mb-0">34ft | 400 sq. ft | Luxury Loft</p>
+                                    <h4 class="mb-1 text-white">The Summit</h4>
+                                    <p class="text-white opacity-75 mb-0">34ft | 400 sq. ft | Luxury Loft</p>
                                 </div>
                                 <a href="packages.html" class="btn btn-primary">Details</a>
                             </div>
@@ -247,9 +248,16 @@
                         </div>
                         <p class="fst-italic text-secondary">"Switching to a tiny home was the best decision for our
                             family. TinyDream made the custom build process so seamless."</p>
-                        <hr>
-                        <h6 class="mb-0">Sarah & James</h6>
-                        <small class="text-muted">Owners of 'The Nordic'</small>
+                        <hr class="w-25 mx-auto mb-4 border-secondary opacity-25">
+                        <div class="d-flex align-items-center justify-content-center text-start">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop"
+                                alt="Sarah & James" class="rounded-circle me-3 border border-2 border-primary"
+                                width="55" height="55" style="object-fit: cover;">
+                            <div>
+                                <h6 class="mb-0 fw-bold">Sarah & James</h6>
+                                <small class="text-secondary opacity-75">Owners of 'The Nordic'</small>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -261,9 +269,16 @@
                         </div>
                         <p class="fst-italic text-secondary">"The craftsmanship is unmatched. Every corner is functional
                             and beautiful. I love my minimalist haven!"</p>
-                        <hr>
-                        <h6 class="mb-0">Michael Chen</h6>
-                        <small class="text-muted">Digital Nomad</small>
+                        <hr class="w-25 mx-auto mb-4 border-secondary opacity-25">
+                        <div class="d-flex align-items-center justify-content-center text-start">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop"
+                                alt="Michael Chen" class="rounded-circle me-3 border border-2 border-primary" width="55"
+                                height="55" style="object-fit: cover;">
+                            <div>
+                                <h6 class="mb-0 fw-bold">Michael Chen</h6>
+                                <small class="text-secondary opacity-75">Digital Nomad</small>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -275,9 +290,16 @@
                         </div>
                         <p class="fst-italic text-secondary">"Exceptional customer service from start to finish. They
                             truly listen to your vision and bring it to life."</p>
-                        <hr>
-                        <h6 class="mb-0">Emma Watson</h6>
-                        <small class="text-muted">Retired Professional</small>
+                        <hr class="w-25 mx-auto mb-4 border-secondary opacity-25">
+                        <div class="d-flex align-items-center justify-content-center text-start">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop"
+                                alt="Emma Watson" class="rounded-circle me-3 border border-2 border-primary" width="55"
+                                height="55" style="object-fit: cover;">
+                            <div>
+                                <h6 class="mb-0 fw-bold">Emma Watson</h6>
+                                <small class="text-secondary opacity-75">Retired Professional</small>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -299,9 +321,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mb-5 mb-lg-0">
-                    <a class="fw-bold d-flex align-items-center mb-3" href="#">
-                        <i class="bi bi-house-heart text-primary me-2 fs-3"></i>
-                        <span class="fs-4">TinyDream</span>
+                    <a class="footer-brand mb-3" href="index.html">
+                        <i class="bi bi-house-heart"></i>
+                        <span>TinyDream</span>
                     </a>
                     <p class="text-secondary opacity-75">Building premium, handcrafted tiny homes for the modern
                         minimalist. Sustainability and craftsmanship in every build.</p>
@@ -311,7 +333,7 @@
                         <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i
                                 class="bi bi-instagram"></i></a>
                         <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i
-                                class="bi bi-twitter"></i></a>
+                                class="bi bi-twitter-x"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-4 mb-5 mb-md-0">
