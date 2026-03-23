@@ -165,7 +165,7 @@
 
                 <div class="mt-auto pt-5">
                     <hr>
-                    <a href="login.html" class="sidebar-link text-danger text-decoration-none">
+                    <a href="login.html" class="sidebar-link text-secondary text-decoration-none">
                         <i class="bi bi-box-arrow-left"></i> Logout
                     </a>
                 </div>
@@ -175,16 +175,15 @@
             <main class="flex-grow-1 p-lg-4 p-3">
                 <header class="d-flex justify-content-between align-items-center mb-4">
                     <div class="d-flex align-items-center gap-2 gap-md-3">
-                        <button class="btn btn-outline-secondary d-lg-none sidebar-toggle me-1" id="sidebarToggle" aria-label="Open navigation">
+                        <button class="btn btn-outline-secondary d-lg-none sidebar-toggle p-1 py-0 me-1" id="sidebarToggle" aria-label="Open navigation">
                             <i class="bi bi-list fs-3"></i>
                         </button>
-                        <a href="index.html" class="header-branding d-flex align-items-center gap-2 d-lg-none text-decoration-none border-end pe-3 me-1">
+                        <a href="index.html" class="header-branding d-flex align-items-center gap-2 d-lg-none text-decoration-none border-end pe-2 me-1">
                             <i class="bi bi-house-heart text-primary fs-4"></i>
-                            <span class="fw-bold text-dark-emphasis" style="font-size: 0.9rem;">TinyDream</span>
+                            <span class="fw-bold text-dark-emphasis d-none d-sm-inline" style="font-size: 0.8rem;">TinyDream</span>
                         </a>
                         <div>
-                            <h2 class="fw-bold mb-1" style="font-size: clamp(1.2rem, 4vw, 2rem);">Your Build Journey</h2>
-                            <p class="text-secondary small mb-0 d-none d-md-block">Viewing 1 Active Project</p>
+                            <h2 class="fw-bold mb-0" style="font-size: clamp(1rem, 4vw, 2rem); white-space: nowrap;">Your Build</h2>
                         </div>
                     </div>
                     <div class="d-flex align-items-center gap-2">
@@ -206,7 +205,7 @@
                                     <span class="text-secondary small fw-bold">Active Builds</span>
                                     <div class="d-flex align-items-center mt-2">
                                         <h2 class="fw-bold mb-0 admin-stat-counter">14</h2>
-                                        <span class="badge bg-success-subtle text-success ms-auto">+2 this month</span>
+                                        <span class="badge bg-primary-subtle text-primary ms-auto">+2 this month</span>
                                     </div>
                                 </div>
                             </div>
@@ -215,7 +214,7 @@
                                     <span class="text-secondary small fw-bold">Gross Revenue</span>
                                     <div class="d-flex align-items-center mt-2">
                                         <h2 class="fw-bold mb-0">$<span class="admin-stat-counter">542000</span></h2>
-                                        <span class="badge bg-info-subtle text-info ms-auto">High Perf</span>
+                                        <span class="badge bg-secondary-subtle text-secondary ms-auto">High Perf</span>
                                     </div>
                                 </div>
                             </div>
@@ -224,7 +223,7 @@
                                     <span class="text-secondary small fw-bold">Customer NPS</span>
                                     <div class="d-flex align-items-center mt-2">
                                         <h2 class="fw-bold mb-0 admin-stat-counter">92</h2>
-                                        <span class="badge bg-success-subtle text-success ms-auto">Excellent</span>
+                                        <span class="badge bg-primary-subtle text-primary ms-auto">Excellent</span>
                                     </div>
                                 </div>
                             </div>
@@ -233,7 +232,7 @@
                                     <span class="text-secondary small fw-bold">Messages</span>
                                     <div class="d-flex align-items-center mt-2">
                                         <h2 class="fw-bold mb-0 admin-stat-counter">28</h2>
-                                        <span class="badge bg-danger ms-auto">Pending</span>
+                                        <span class="badge bg-accent-subtle text-accent ms-auto">Pending</span>
                                     </div>
                                 </div>
                             </div>
@@ -249,7 +248,7 @@
                                 <button class="btn btn-primary btn-sm rounded-pill">+ Add New Build</button>
                             </div>
                             <div class="table-responsive">
-                                <table class="table table-hover align-middle border-0 mb-0">
+                                <table class="table table-hover align-middle border-0 mb-0" style="min-width: 800px;">
                                     <thead class="bg-light">
                                         <tr>
                                             <th class="p-4 border-0">Client Name</th>
@@ -287,7 +286,7 @@
                                             <td class="p-4 border-0">The Summit</td>
                                             <td class="p-4 border-0">Phase 5: Interior Finishing</td>
                                             <td class="p-4 border-0"><span
-                                                    class="badge bg-warning text-dark px-3 py-2 rounded-pill">Urgent
+                                                    class="badge bg-accent-subtle text-accent px-3 py-2 rounded-pill">Urgent
                                                     Attention</span></td>
                                             <td class="p-4 border-0 fw-bold">$115,000</td>
                                             <td class="p-4 border-0">
@@ -321,19 +320,142 @@
                         </div>
                     </div>
 
-                    <!-- Customers Tab Placeholder -->
+                    <!-- Customers Tab -->
                     <div class="tab-pane fade" id="customers" role="tabpanel">
                         <div class="custom-card bg-white border-0 shadow-sm p-4">
-                            <h5 class="mb-4">Customer Directory</h5>
-                            <p class="text-secondary pt-3">No direct customer data available right now.</p>
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <h5 class="mb-0">Customer Directory</h5>
+                                <div class="input-group w-50">
+                                    <input type="text" class="form-control border-end-0" placeholder="Search customers...">
+                                    <span class="input-group-text bg-white border-start-0 text-secondary"><i class="bi bi-search"></i></span>
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle" style="min-width: 700px;">
+                                    <thead class="bg-light">
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Location</th>
+                                            <th>Total Builds</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="bg-primary-subtle text-primary rounded-circle p-2 me-3 fw-bold small">ED</div>
+                                                    <div>
+                                                        <h6 class="mb-0 fw-bold">Emma Davis</h6>
+                                                        <small class="text-secondary">emma@gmail.com</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>Portland, OR</td>
+                                            <td>2</td>
+                                            <td><span class="badge bg-primary-subtle text-primary rounded-pill px-3">Active</span></td>
+                                            <td><button class="btn btn-sm btn-light border"><i class="bi bi-eye"></i></button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="bg-secondary-subtle text-secondary rounded-circle p-2 me-3 fw-bold small">RK</div>
+                                                    <div>
+                                                        <h6 class="mb-0 fw-bold">Ryan Knight</h6>
+                                                        <small class="text-secondary">r.knight@yahoo.com</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>Austin, TX</td>
+                                            <td>1</td>
+                                            <td><span class="badge bg-accent-subtle text-accent rounded-pill px-3">Lead</span></td>
+                                            <td><button class="btn btn-sm btn-light border"><i class="bi bi-eye"></i></button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="bg-primary-subtle text-primary rounded-circle p-2 me-3 fw-bold small">LM</div>
+                                                    <div>
+                                                        <h6 class="mb-0 fw-bold">Lisa Miller</h6>
+                                                        <small class="text-secondary">lisa.m@icloud.com</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>Seattle, WA</td>
+                                            <td>3</td>
+                                            <td><span class="badge bg-primary-subtle text-primary rounded-pill px-3">VIP</span></td>
+                                            <td><button class="btn btn-sm btn-light border"><i class="bi bi-eye"></i></button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Finance Tab Placeholder -->
+                    <!-- Finance Tab -->
                     <div class="tab-pane fade" id="finance" role="tabpanel">
+                        <div class="row g-4 mb-4">
+                            <div class="col-md-4">
+                                <div class="stat-card border-start border-primary border-4">
+                                    <span class="text-secondary small fw-bold">Month-to-Date Revenue</span>
+                                    <h3 class="fw-bold mt-2">$42,850</h3>
+                                    <p class="text-primary small mb-0"><i class="bi bi-arrow-up"></i> 12% from last month</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="stat-card border-start border-secondary border-4">
+                                    <span class="text-secondary small fw-bold">Average Project Value</span>
+                                    <h3 class="fw-bold mt-2">$78,200</h3>
+                                    <p class="text-secondary small mb-0">Total 15 Active Projects</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="stat-card border-start border-accent border-4">
+                                    <span class="text-secondary small fw-bold">Pending Invoices</span>
+                                    <h3 class="fw-bold mt-2">$15,400</h3>
+                                    <p class="text-accent small mb-0">Due in next 7 days</p>
+                                </div>
+                            </div>
+                        </div>
                         <div class="custom-card bg-white border-0 shadow-sm p-4">
                             <h5 class="mb-4">Financial Dashboard</h5>
-                            <p class="text-secondary pt-3">Detailed financial records and statements.</p>
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle" style="min-width: 700px;">
+                                    <thead class="bg-light">
+                                        <tr>
+                                            <th>Invoice ID</th>
+                                            <th>Client</th>
+                                            <th>Amount</th>
+                                            <th>Method</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="fw-bold">INV-2026-001</td>
+                                            <td>John Doe</td>
+                                            <td>$12,500.00</td>
+                                            <td>Bank Transfer</td>
+                                            <td><span class="badge bg-primary-subtle text-primary rounded-pill">Paid</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-bold">INV-2026-002</td>
+                                            <td>Sarah Williams</td>
+                                            <td>$8,200.00</td>
+                                            <td>Credit Card</td>
+                                            <td><span class="badge bg-primary-subtle text-primary rounded-pill">Paid</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="fw-bold">INV-2026-003</td>
+                                            <td>Michael Chen</td>
+                                            <td>$5,400.00</td>
+                                            <td>PayPal</td>
+                                            <td><span class="badge bg-accent-subtle text-accent rounded-pill">Pending</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
 
@@ -356,7 +478,7 @@
                                         <button class="btn btn-link text-primary p-0 fw-bold">Review</button>
                                     </div>
                                     <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 bg-info-subtle rounded-circle p-3 text-info"><i
+                                        <div class="flex-shrink-0 bg-accent-subtle rounded-circle p-3 text-accent"><i
                                                 class="bi bi-image"></i></div>
                                         <div class="ms-3 flex-grow-1">
                                             <h6 class="mb-1">Finish Selection Approval Needed</h6>
@@ -371,11 +493,54 @@
                         </div>
                     </div>
 
-                    <!-- Settings Tab Placeholder -->
+                    <!-- Settings Tab -->
                     <div class="tab-pane fade" id="settings" role="tabpanel">
                         <div class="custom-card bg-white border-0 shadow-sm p-4">
                             <h5 class="mb-4">System Settings</h5>
-                            <p class="text-secondary pt-3">Manage administrative and security settings.</p>
+                            <div class="row">
+                                <div class="col-lg-6 mb-4">
+                                    <label class="form-label fw-bold">Site Title</label>
+                                    <input type="text" class="form-control" value="TinyDream Builder">
+                                </div>
+                                <div class="col-lg-6 mb-4">
+                                    <label class="form-label fw-bold">Support Email</label>
+                                    <input type="email" class="form-control" value="support@tinydream.com">
+                                </div>
+                                <div class="col-12 mb-4">
+                                    <label class="form-label fw-bold">Maintenance Mode</label>
+                                    <div class="form-check form-switch mt-2">
+                                        <input class="form-check-input" type="checkbox" id="maintenanceSwitch">
+                                        <label class="form-check-label text-secondary" for="maintenanceSwitch">Toggle this to put the site into maintenance mode</label>
+                                    </div>
+                                </div>
+                                <hr class="my-4 border-secondary opacity-25">
+                                <h6 class="fw-bold mb-4">Notification Preferences</h6>
+                                <div class="col-md-12 mb-3">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h6 class="mb-0">Email Notifications</h6>
+                                            <p class="text-secondary small mb-0">Receive daily summary emails</p>
+                                        </div>
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" checked>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mb-4">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h6 class="mb-0">SMS Alerts</h6>
+                                            <p class="text-secondary small mb-0">Critical alerts sent to your phone</p>
+                                        </div>
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 text-md-end">
+                                    <button class="btn btn-primary px-5 rounded-pill">Save Settings</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -104,7 +104,29 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 8. Loading Indicator
+    // 8. Back to Top Button
+    const topBtn = document.createElement('button');
+    topBtn.innerHTML = '<i class="bi bi-arrow-up"></i>';
+    topBtn.className = 'back-to-top-fixed shadow';
+    topBtn.setAttribute('aria-label', 'Back to Top');
+    document.body.appendChild(topBtn);
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            topBtn.classList.add('show');
+        } else {
+            topBtn.classList.remove('show');
+        }
+    });
+
+    topBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // 9. Loading Indicator
     window.addEventListener('load', () => {
         const loader = document.getElementById('preloader');
         if (loader) {

@@ -46,17 +46,19 @@
 
 <body>
 
-    <!-- Floating Theme Toggle -->
-    <div class="position-fixed top-0 end-0 p-4 z-3">
-        <button class="theme-toggle shadow-sm" aria-label="Toggle Dark Mode">
-            <i class="bi bi-moon-stars"></i>
-        </button>
-    </div>
+
 
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-lg-5">
-                <div class="custom-card mx-auto border-0 shadow-lg text-center">
+                <div class="custom-card mx-auto border-0 shadow-lg text-center position-relative">
+                    <!-- Integrated Theme Toggle -->
+                    <div class="position-absolute top-0 end-0 p-3 p-md-4">
+                        <button class="theme-toggle shadow-sm" aria-label="Toggle Dark Mode">
+                            <i class="bi bi-moon-stars"></i>
+                        </button>
+                    </div>
+
                     <a href="index.html" class="navbar-brand mb-4 justify-content-center w-100">
                         <i class="bi bi-house-heart"></i>
                         <span>TinyDream</span>
@@ -78,12 +80,12 @@
                                     placeholder="••••••••" required>
                             </div>
                         </div>
-                        <div class="mb-3 d-flex justify-content-between align-items-center">
-                            <div class="form-check">
+                        <div class="mb-4 d-flex justify-content-between align-items-center flex-wrap gap-2">
+                            <div class="form-check mb-0">
                                 <input type="checkbox" class="form-check-input" id="rememberMe">
-                                <label class="form-check-label small text-secondary" for="rememberMe">Remember me</label>
+                                <label class="form-check-label small text-secondary text-nowrap" for="rememberMe">Remember me</label>
                             </div>
-                            <a href="#" class="small text-primary text-decoration-none">Forgotten Password?</a>
+                            <a href="#" class="small text-primary text-decoration-none text-nowrap">Forgotten Password?</a>
                         </div>
                         <button type="submit" class="btn btn-primary w-100 py-2 fw-bold mb-3">Login</button>
                     </form>

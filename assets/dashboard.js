@@ -34,7 +34,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const sidebarLinks = document.querySelectorAll('.sidebar-link');
     sidebarLinks.forEach(link => {
         link.addEventListener('click', () => {
-            if (window.innerWidth < 1024) {
+            // Ensure page scrolls to top on tab change, especially important for mobile
+            window.scrollTo({ top: 0, behavior: 'instant' });
+            
+            if (window.innerWidth < 1024 && sidebar && sidebar.classList.contains('active')) {
                 toggleSidebar();
             }
         });
