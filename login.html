@@ -44,20 +44,27 @@
     </style>
 </head>
 
-<body>
+    <!-- Floating Desktop Theme Toggle -->
+    <div class="position-fixed top-0 end-0 p-4 z-3 d-none d-lg-block">
+        <button class="theme-toggle shadow-sm" aria-label="Toggle Dark Mode">
+            <i class="bi bi-moon-stars"></i>
+        </button>
+    </div>
 
 
 
-    <div class="container my-5">
+
+    <div class="container py-3">
         <div class="row justify-content-center">
             <div class="col-lg-5">
                 <div class="custom-card mx-auto border-0 shadow-lg text-center position-relative">
-                    <!-- Integrated Theme Toggle -->
-                    <div class="position-absolute top-0 end-0 p-3 p-md-4">
+                    <!-- Mobile Integrated Theme Toggle -->
+                    <div class="position-absolute top-0 end-0 p-3 d-lg-none">
                         <button class="theme-toggle shadow-sm" aria-label="Toggle Dark Mode">
                             <i class="bi bi-moon-stars"></i>
                         </button>
                     </div>
+
 
                     <a href="index.html" class="navbar-brand mb-4 justify-content-center w-100">
                         <i class="bi bi-house-heart"></i>
@@ -69,12 +76,12 @@
 
                     <form action="dashboard-user.html" method="GET" class="text-start needs-validation" novalidate>
                         <div class="mb-3">
-                            <label class="form-label fw-bold small text-uppercase">Email Address</label>
+                            <label class="form-label fw-bold small">Email Address</label>
                             <input type="email" class="form-control bg-light border-0 py-2"
                                 placeholder="john@example.com" required>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label fw-bold small text-uppercase">Password</label>
+                            <label class="form-label fw-bold small">Password</label>
                             <div class="position-relative">
                                 <input type="password" class="form-control bg-light border-0 py-2"
                                     placeholder="••••••••" required>
@@ -92,7 +99,7 @@
 
                     <div class="d-flex align-items-center mb-3">
                         <hr class="flex-grow-1 border-secondary opacity-25">
-                        <span class="mx-3 text-muted" style="font-size: 10px;">OR LOGIN WITH</span>
+                        <span class="mx-3 text-muted" style="font-size: 10px;">Or Login With</span>
                         <hr class="flex-grow-1 border-secondary opacity-25">
                     </div>
 

@@ -5,30 +5,31 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Theme (Dark Mode) Toggle
-    const themeToggle = document.querySelector('.theme-toggle');
+    const themeToggles = document.querySelectorAll('.theme-toggle');
     const htmlElement = document.documentElement;
 
     // Check for saved theme
     const savedTheme = localStorage.getItem('theme') || 'light';
     htmlElement.setAttribute('data-bs-theme', savedTheme);
-    updateToggleIcon(savedTheme);
+    updateToggleIcons(savedTheme);
 
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
+    themeToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
             const currentTheme = htmlElement.getAttribute('data-bs-theme');
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
 
             htmlElement.setAttribute('data-bs-theme', newTheme);
             localStorage.setItem('theme', newTheme);
-            updateToggleIcon(newTheme);
+            updateToggleIcons(newTheme);
         });
-    }
+    });
 
-    function updateToggleIcon(theme) {
-        const icon = document.querySelector('.theme-toggle i');
-        if (icon) {
-            icon.className = theme === 'light' ? 'bi bi-moon-stars' : 'bi bi-sun';
-        }
+    function updateToggleIcons(theme) {
+        document.querySelectorAll('.theme-toggle i').forEach(icon => {
+            if (icon) {
+                icon.className = theme === 'light' ? 'bi bi-moon-stars' : 'bi bi-sun';
+            }
+        });
     }
 
     // 2. Navbar Scroll Effect
