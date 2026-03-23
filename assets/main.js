@@ -32,6 +32,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 1.1 RTL Mode Toggle
+    const rtlToggles = document.querySelectorAll('.rtl-toggle');
+    const bodyElement = document.body;
+
+    // Check for saved RTL state
+    const savedRTL = localStorage.getItem('rtl') === 'true';
+    if (savedRTL) {
+        bodyElement.classList.add('rtl-mode');
+    }
+
+    rtlToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const isRTL = bodyElement.classList.toggle('rtl-mode');
+            localStorage.setItem('rtl', isRTL);
+        });
+    });
+
     // 2. Navbar Scroll Effect
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
