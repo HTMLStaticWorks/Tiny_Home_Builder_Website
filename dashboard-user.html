@@ -79,22 +79,44 @@
             .sidebar-toggle, .sidebar-close {
                 display: none !important;
             }
+
+            .header-branding {
+                border-right: 0 !important;
+                padding-right: 0 !important;
+                margin-right: 0 !important;
+            }
         }
 
         /* Mobile Adjustments */
         @media (max-width: 575px) {
             main {
-                padding: 1.25rem !important;
+                padding: 1rem !important;
             }
             .custom-card {
-                padding: 1.25rem !important;
+                padding: 1rem !important;
             }
             h2 {
-                font-size: 1.5rem !important;
+                font-size: 1.25rem !important;
             }
             .table-responsive table {
-                min-width: 800px;
+                min-width: 600px;
             }
+        }
+
+        @media (max-width: 360px) {
+            .header-branding span {
+                display: none !important;
+            }
+            .header-branding {
+                border-right: 0 !important;
+                padding-right: 0 !important;
+                margin-right: 0 !important;
+            }
+        }
+
+        body {
+            overflow-x: hidden;
+            width: 100%;
         }
 
         .sidebar-link {
@@ -181,12 +203,16 @@
             <!-- Main Content Area -->
             <main class="flex-grow-1 p-lg-5 p-4">
                 <header class="d-flex justify-content-between align-items-center mb-5 slide-left">
-                    <div class="d-flex align-items-center gap-3">
-                        <button class="btn btn-outline-secondary d-lg-none sidebar-toggle" id="sidebarToggle" aria-label="Open navigation">
+                    <div class="d-flex align-items-center gap-2 gap-md-3">
+                        <button class="btn btn-outline-secondary d-lg-none sidebar-toggle me-1" id="sidebarToggle" aria-label="Open navigation">
                             <i class="bi bi-list fs-3"></i>
                         </button>
+                        <a href="index.html" class="header-branding d-flex align-items-center gap-2 d-lg-none text-decoration-none border-end pe-3 me-1">
+                            <i class="bi bi-house-heart text-primary fs-4"></i>
+                            <span class="fw-bold text-dark-emphasis" style="font-size: 0.9rem;">TinyDream</span>
+                        </a>
                         <div>
-                            <h2 class="fw-bold mb-1">Portfolio Performance</h2>
+                            <h2 class="fw-bold mb-1" style="font-size: clamp(1.2rem, 4vw, 2rem);">Portfolio Performance</h2>
                             <p class="text-secondary small mb-0 d-none d-md-block">Today's Data Overview: March 19, 2026</p>
                         </div>
                     </div>
@@ -240,13 +266,13 @@
                                         <div class="timeline-item mb-4 position-relative">
                                             <div class="position-absolute translate-middle-x"
                                                 style="left: -23px; top: 0;"><i
-                                                    class="bi bi-check-circle-fill text-primary"></i></div>
+                                                    class="bi bi-check-circle-fill text-primary fs-5"></i></div>
                                             <h6 class="mb-1">Phase 1: Trailer & Base</h6>
                                             <p class="text-secondary small">Completed on Feb 12th, 2026.</p>
                                         </div>
                                         <div class="timeline-item mb-4 position-relative">
                                             <div class="position-absolute translate-middle-x"
-                                                style="left: -23px; top: 0;"><i class="bi bi-dot text-primary h3"></i>
+                                                style="left: -23px; top: 0;"><i class="bi bi-record-circle-fill text-primary fs-5"></i>
                                             </div>
                                             <h6 class="mb-1">Phase 2: Wood Framing (Active)</h6>
                                             <p class="text-secondary small">Construction in progress.</p>
@@ -288,7 +314,7 @@
                             <div class="timeline ps-3 border-start border-2 border-primary border-opacity-25 mt-4 pb-3">
                                 <div class="timeline-item mb-4 position-relative">
                                     <div class="position-absolute translate-middle-x" style="left: -23px; top: 0;"><i
-                                            class="bi bi-check-circle-fill text-primary"></i></div>
+                                            class="bi bi-check-circle-fill text-primary fs-5"></i></div>
                                     <h6 class="mb-1">Phase 1: Trailer & Base</h6>
                                     <p class="text-secondary small">Completed on Feb 12th, 2026. Iron Eagle Triple Axle
                                         frame stabilized.</p>
@@ -298,14 +324,14 @@
                                 </div>
                                 <div class="timeline-item mb-4 position-relative">
                                     <div class="position-absolute translate-middle-x" style="left: -23px; top: 0;"><i
-                                            class="bi bi-dot text-primary h3"></i></div>
+                                            class="bi bi-record-circle-fill text-primary fs-5"></i></div>
                                     <h6 class="mb-1">Phase 2: Wood Framing (Active)</h6>
                                     <p class="text-secondary small">Stud wall construction and roof rafters installation
                                         are in progress.</p>
                                 </div>
                                 <div class="timeline-item position-relative opacity-50">
                                     <div class="position-absolute translate-middle-x" style="left: -23px; top: 0;"><i
-                                            class="bi bi-circle text-muted"></i></div>
+                                            class="bi bi-circle text-muted fs-5"></i></div>
                                     <h6 class="mb-1">Phase 3: Sheathing & Siding</h6>
                                     <p class="text-secondary small">Estimated start: March 5th, 2026.</p>
                                 </div>
@@ -346,12 +372,12 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div
-                                        class="custom-card border-0 bg-primary bg-opacity-10 text-center d-flex flex-column align-items-center justify-content-center p-4">
-                                        <i class="bi bi-plus-circle text-primary fs-1 mb-3"></i>
-                                        <h5>Custom Finishes?</h5>
-                                        <p class="small text-secondary">Request a unique material or color that isn't
+                                        class="custom-card border-0 bg-primary text-center d-flex flex-column align-items-center justify-content-center p-4 h-100">
+                                        <i class="bi bi-plus-circle text-white fs-1 mb-3"></i>
+                                        <h5 class="text-white">Custom Finishes?</h5>
+                                        <p class="small text-white opacity-75">Request a unique material or color that isn't
                                             listed here.</p>
-                                        <button class="btn btn-link text-primary fw-bold">Contact Designer</button>
+                                        <button class="btn btn-link text-white fw-bold p-0">Contact Designer</button>
                                     </div>
                                 </div>
                             </div>
