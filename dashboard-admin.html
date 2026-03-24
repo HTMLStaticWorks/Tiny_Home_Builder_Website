@@ -38,7 +38,7 @@
         }
 
         /* Responsive Breakpoints */
-        @media (max-width: 1023px) {
+        @media (max-width: 1199px) {
             .dashboard-sidebar {
                 position: fixed;
                 left: 0;
@@ -60,7 +60,7 @@
             }
         }
 
-        @media (min-width: 1024px) {
+        @media (min-width: 1200px) {
             .dashboard-sidebar {
                 width: 250px !important;
                 position: fixed !important;
@@ -212,21 +212,21 @@
         /* Responsive Dashboard Table & Card Fixes */
         @media (max-width: 991px) {
             html, body {
-                overflow-y: hidden !important;
-                height: 100% !important;
+                overflow-y: auto !important;
+                min-height: 100% !important;
                 position: relative;
             }
 
             main {
-                height: 100vh !important;
-                overflow-y: hidden !important;
+                min-height: 100vh !important;
+                overflow-y: auto !important;
                 display: flex;
                 flex-direction: column;
             }
 
             .tab-content {
                 flex-grow: 1;
-                overflow-y: hidden !important; /* Complete removal of vertical scroll */
+                overflow-y: visible !important;
             }
 
             .custom-card {
@@ -242,7 +242,7 @@
             }
 
             .table-responsive table {
-                min-width: 900px !important;
+                min-width: 700px !important;
             }
 
             .table-responsive table th,
@@ -272,7 +272,7 @@
                         <i class="bi bi-house-heart"></i>
                         <span>TinyDream</span>
                     </a>
-                    <button class="btn btn-link text-secondary d-lg-none p-0 sidebar-close" id="sidebarClose" aria-label="Close sidebar">
+                    <button class="btn btn-link text-secondary d-xl-none p-0 sidebar-close" id="sidebarClose" aria-label="Close sidebar">
                         <i class="bi bi-x-lg fs-4"></i>
                     </button>
                 </div>
@@ -307,16 +307,13 @@
             </nav>
 
             <!-- Main Content Area -->
-            <main class="flex-grow-1 p-lg-4 p-3">
+            <main class="flex-grow-1 p-xl-4 p-3">
                 <header class="d-flex justify-content-between align-items-center mb-4">
                     <div class="d-flex align-items-center gap-2 gap-md-3">
-                        <button class="btn btn-outline-secondary d-lg-none sidebar-toggle p-1 py-0 me-1" id="sidebarToggle" aria-label="Open navigation">
+                        <button class="btn btn-outline-secondary d-xl-none sidebar-toggle p-1 py-0 me-1" id="sidebarToggle" aria-label="Open navigation">
                             <i class="bi bi-list fs-3"></i>
                         </button>
-                        <a href="index.html" class="header-branding d-flex align-items-center gap-2 d-lg-none text-decoration-none border-end pe-2 me-1">
-                            <i class="bi bi-house-heart text-primary fs-4"></i>
-                            <span class="fw-bold text-dark-emphasis d-none d-sm-inline" style="font-size: 0.8rem;">TinyDream</span>
-                        </a>
+
                         <div>
                             <h2 class="fw-bold mb-0" style="font-size: clamp(1rem, 4vw, 2rem); white-space: nowrap;">Your Build</h2>
                         </div>
@@ -336,7 +333,7 @@
                     <div class="tab-pane fade show active" id="overview" role="tabpanel">
                         <!-- Statistics Grid -->
                         <div class="row g-3 g-md-4 mb-4 mobile-scroll-container">
-                            <div class="col-sm-6 col-lg-3">
+                            <div class="col-sm-6 col-xl-3">
                                 <div class="stat-card">
                                     <span class="text-secondary small fw-bold">Active Builds</span>
                                     <div class="d-flex align-items-center mt-2">
@@ -345,7 +342,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-lg-3">
+                            <div class="col-sm-6 col-xl-3">
                                 <div class="stat-card">
                                     <span class="text-secondary small fw-bold">Gross Revenue</span>
                                     <div class="d-flex align-items-center mt-2">
@@ -354,7 +351,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-lg-3">
+                            <div class="col-sm-6 col-xl-3">
                                 <div class="stat-card">
                                     <span class="text-secondary small fw-bold">Customer NPS</span>
                                     <div class="d-flex align-items-center mt-2">
@@ -363,7 +360,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-lg-3">
+                            <div class="col-sm-6 col-xl-3">
                                 <div class="stat-card">
                                     <span class="text-secondary small fw-bold">Messages</span>
                                     <div class="d-flex align-items-center mt-2">
@@ -532,21 +529,21 @@
                     <!-- Finance Tab -->
                     <div class="tab-pane fade" id="finance" role="tabpanel">
                         <div class="row g-3 g-md-4 mb-4 mobile-scroll-container">
-                            <div class="col-sm-6 col-lg-4">
+                            <div class="col-sm-6 col-xl-4">
                                 <div class="stat-card border-start border-primary border-4">
                                     <span class="text-secondary small fw-bold">Month-to-Date Revenue</span>
                                     <h3 class="fw-bold mt-2">$42,850</h3>
                                     <p class="text-primary small mb-0"><i class="bi bi-arrow-up"></i> 12%</p>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-lg-4">
+                            <div class="col-sm-6 col-xl-4">
                                 <div class="stat-card border-start border-secondary border-4">
                                     <span class="text-secondary small fw-bold">Avg Project Value</span>
                                     <h3 class="fw-bold mt-2">$78,200</h3>
                                     <p class="text-secondary small mb-0">15 Active Projects</p>
                                 </div>
                             </div>
-                            <div class="col-sm-12 col-lg-4">
+                            <div class="col-sm-12 col-xl-4">
                                 <div class="stat-card border-start border-accent border-4">
                                     <span class="text-secondary small fw-bold">Pending Invoices</span>
                                     <h3 class="fw-bold mt-2">$15,400</h3>
@@ -599,7 +596,7 @@
                     <div class="tab-pane fade" id="editor" role="tabpanel">
                         <!-- Recent Messages Sidebar -->
                         <div class="row">
-                            <div class="col-lg-12">
+                            <div class="col-xl-12">
                                 <div class="custom-card border-0 bg-white shadow-sm p-4">
                                     <h5 class="mb-4">Recent Client Inquiries (Content Management)</h5>
                                     <div class="d-flex align-items-center mb-4 pb-3 border-bottom">
@@ -634,11 +631,11 @@
                         <div class="custom-card bg-white border-0 shadow-sm p-4">
                             <h5 class="mb-4">System Settings</h5>
                             <div class="row">
-                                <div class="col-lg-6 mb-4">
+                                <div class="col-xl-6 mb-4">
                                     <label class="form-label fw-bold">Site Title</label>
                                     <input type="text" class="form-control" value="TinyDream Builder">
                                 </div>
-                                <div class="col-lg-6 mb-4">
+                                <div class="col-xl-6 mb-4">
                                     <label class="form-label fw-bold">Support Email</label>
                                     <input type="email" class="form-control" value="support@tinydream.com">
                                 </div>

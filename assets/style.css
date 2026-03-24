@@ -520,7 +520,7 @@ html {
 }
 
 /* Mobile-only menu behavior to prevent branding from pushing down when menu expands */
-@media (max-width: 991.98px) {
+@media (max-width: 1199.98px) {
     .navbar {
         align-items: flex-start;
     }
@@ -816,7 +816,7 @@ html[data-bs-theme="dark"] .navbar .navbar-toggler-icon {
 }
 
 /* Navbar Mobile Toggler Fix - Font Based for Perfect Contrast */
-@media (max-width: 991.98px) {
+@media (max-width: 1199.98px) {
     .navbar-toggler {
         border: none !important;
         outline: none !important;
@@ -1123,7 +1123,7 @@ footer .btn.rounded-circle {
     color: #fff;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
     .nav-item.dropdown:hover .dropdown-menu {
         display: block;
         opacity: 1;
@@ -1150,7 +1150,7 @@ footer .btn.rounded-circle {
     min-width: 180px;
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 1199.98px) {
     .navbar-collapse {
         margin-top: 1rem;
         padding: 1rem 0;
@@ -1164,8 +1164,8 @@ footer .btn.rounded-circle {
     }
 }
 
-/* Tablet Optimizations to keep menu on one line between 992px and 1200px */
-@media (min-width: 992px) and (max-width: 1200px) {
+/* Tablet Optimizations to keep menu on one line between 1200px and 1200px */
+@media (min-width: 1200px) and (max-width: 1200px) {
     .nav-link {
         margin: 0 !important;
         font-size: 0.8rem !important;
@@ -1278,7 +1278,7 @@ footer .btn.rounded-circle {
     color: #ffffff !important;
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 1199.98px) {
     footer .container {
         padding-left: 20px !important;
         padding-right: 20px !important;
