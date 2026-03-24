@@ -117,25 +117,49 @@
             height: 100%;
         }
 
-        /* Enforce table scrolling on mobile */
+        /* Enhanced Table Styles */
         .table-responsive {
-            display: block;
-            width: 100%;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
         }
 
-        /* Custom Scrollbar */
         .table-responsive::-webkit-scrollbar {
-            height: 6px;
+            height: 8px;
         }
         .table-responsive::-webkit-scrollbar-track {
-            background: rgba(0,0,0,0.05);
+            background: rgba(0,0,0,0.02);
             border-radius: 10px;
         }
         .table-responsive::-webkit-scrollbar-thumb {
             background: var(--primary);
+            opacity: 0.5;
             border-radius: 10px;
+            border: 2px solid transparent;
+            background-clip: content-box;
+        }
+        
+        .table thead th {
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.08rem;
+            background: var(--bg-secondary) !important;
+            color: var(--text-secondary);
+            white-space: nowrap;
+            padding: 1.25rem 1.5rem !important;
+        }
+
+        .table tbody td {
+            white-space: nowrap;
+            padding: 1.25rem 1.5rem !important;
+            font-size: 0.95rem;
+        }
+
+        .badge {
+            font-weight: 600;
+            padding: 0.5rem 1rem !important;
+            letter-spacing: 0.01rem;
         }
 
         /* Group Horizontal Scroll Utility */
@@ -157,6 +181,73 @@
         @media (max-width: 991px) {
             .stat-card {
                 padding: 1.25rem;
+            }
+        }
+
+        /* Enhanced Table Styles */
+        .table-responsive {
+            scroll-behavior: smooth;
+        }
+        
+        .table thead th {
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.05rem;
+            background: var(--bg-secondary);
+            white-space: nowrap;
+        }
+
+        .table tbody td {
+            white-space: nowrap;
+            padding: 1rem 1.5rem !important;
+        }
+
+        .badge {
+            font-weight: 600;
+            padding: 0.5rem 1rem !important;
+            letter-spacing: 0.01rem;
+        }
+
+        /* Responsive Dashboard Table & Card Fixes */
+        @media (max-width: 991px) {
+            html, body {
+                overflow-y: hidden !important;
+                height: 100% !important;
+                position: relative;
+            }
+
+            main {
+                height: 100vh !important;
+                overflow-y: hidden !important;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .tab-content {
+                flex-grow: 1;
+                overflow-y: hidden !important; /* Complete removal of vertical scroll */
+            }
+
+            .custom-card {
+                max-width: none !important;
+                width: 100% !important;
+            }
+
+            .table-responsive {
+                overflow-x: auto !important;
+                overflow-y: hidden !important;
+                -webkit-overflow-scrolling: touch;
+                scroll-behavior: smooth;
+            }
+
+            .table-responsive table {
+                min-width: 900px !important;
+            }
+
+            .table-responsive table th,
+            .table-responsive table td {
+                white-space: nowrap !important;
             }
         }
 
@@ -293,15 +384,15 @@
                                 <button class="btn btn-primary btn-sm rounded-pill w-auto align-self-start align-self-sm-center">+ Add New Build</button>
                             </div>
                             <div class="table-responsive">
-                                <table class="table table-hover align-middle border-0 mb-0" style="min-width: 800px;">
+                                <table class="table table-hover align-middle mb-0" style="min-width: 900px;">
                                     <thead class="bg-light">
                                         <tr>
                                             <th class="p-4 border-0">Client Name</th>
                                             <th class="p-4 border-0">Model Type</th>
-                                            <th class="p-4 border-0">Stage</th>
-                                            <th class="p-4 border-0">Status</th>
-                                            <th class="p-4 border-0">Budget</th>
-                                            <th class="p-4 border-0">Actions</th>
+                                            <th class="p-4 border-0 text-center">Stage</th>
+                                            <th class="p-4 border-0 text-center">Status</th>
+                                            <th class="p-4 border-0 text-center">Budget</th>
+                                            <th class="p-4 border-0 text-end">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -311,12 +402,12 @@
                                                 <small class="text-muted">john@example.com</small>
                                             </td>
                                             <td class="p-4 border-0">The Nordic</td>
-                                            <td class="p-4 border-0">Phase 2: Framing</td>
-                                            <td class="p-4 border-0"><span
-                                                    class="badge bg-primary px-3 py-2 rounded-pill">In Progress</span>
+                                            <td class="p-4 border-0 text-center">Phase 2: Framing</td>
+                                            <td class="p-4 border-0 text-center">
+                                                <span class="badge bg-primary px-3 py-2 rounded-pill">In Progress</span>
                                             </td>
-                                            <td class="p-4 border-0 fw-bold">$84,600</td>
-                                            <td class="p-4 border-0">
+                                            <td class="p-4 border-0 text-center fw-bold">$84,600</td>
+                                            <td class="p-4 border-0 text-end">
                                                 <button class="btn btn-sm btn-light border admin-delete-item me-2"><i
                                                         class="bi bi-trash"></i></button>
                                                 <button class="btn btn-sm btn-light border admin-edit-item"><i
@@ -329,12 +420,12 @@
                                                 <small class="text-muted">sarah.w@u-mail.com</small>
                                             </td>
                                             <td class="p-4 border-0">The Summit</td>
-                                            <td class="p-4 border-0">Phase 5: Interior Finishing</td>
-                                            <td class="p-4 border-0"><span
-                                                    class="badge bg-accent-subtle text-accent px-3 py-2 rounded-pill">Urgent
-                                                    Attention</span></td>
-                                            <td class="p-4 border-0 fw-bold">$115,000</td>
-                                            <td class="p-4 border-0">
+                                            <td class="p-4 border-0 text-center">Phase 5: Interior Finishing</td>
+                                            <td class="p-4 border-0 text-center">
+                                                <span class="badge bg-accent-subtle text-accent px-3 py-2 rounded-pill">Urgent Attention</span>
+                                            </td>
+                                            <td class="p-4 border-0 text-center fw-bold">$115,000</td>
+                                            <td class="p-4 border-0 text-end">
                                                 <button class="btn btn-sm btn-light border admin-delete-item me-2"><i
                                                         class="bi bi-trash"></i></button>
                                                 <button class="btn btn-sm btn-light border admin-edit-item"><i
@@ -347,12 +438,12 @@
                                                 <small class="text-muted">m.chen@net.com</small>
                                             </td>
                                             <td class="p-4 border-0">The Breeze (20ft)</td>
-                                            <td class="p-4 border-0">Phase 1: Trailer Base</td>
-                                            <td class="p-4 border-0"><span
-                                                    class="badge bg-primary px-3 py-2 rounded-pill">In Progress</span>
+                                            <td class="p-4 border-0 text-center">Phase 1: Trailer Base</td>
+                                            <td class="p-4 border-0 text-center">
+                                                <span class="badge bg-primary px-3 py-2 rounded-pill">In Progress</span>
                                             </td>
-                                            <td class="p-4 border-0 fw-bold">$62,000</td>
-                                            <td class="p-4 border-0">
+                                            <td class="p-4 border-0 text-center fw-bold">$62,000</td>
+                                            <td class="p-4 border-0 text-end">
                                                 <button class="btn btn-sm btn-light border admin-delete-item me-2"><i
                                                         class="bi bi-trash"></i></button>
                                                 <button class="btn btn-sm btn-light border admin-edit-item"><i
