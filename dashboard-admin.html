@@ -110,10 +110,54 @@
 
         .stat-card {
             border-radius: 20px;
-            padding: 30px;
+            padding: 1.5rem;
             background: var(--bg-secondary);
             border: 0;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            height: 100%;
+        }
+
+        /* Enforce table scrolling on mobile */
+        .table-responsive {
+            display: block;
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* Custom Scrollbar */
+        .table-responsive::-webkit-scrollbar {
+            height: 6px;
+        }
+        .table-responsive::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.05);
+            border-radius: 10px;
+        }
+        .table-responsive::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+        }
+
+        /* Group Horizontal Scroll Utility */
+        @media (max-width: 767px) {
+            .mobile-scroll-container {
+                display: flex;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                gap: 1rem;
+                padding-bottom: 1rem;
+                margin-bottom: 1rem;
+            }
+            .mobile-scroll-container > [class*="col-"] {
+                flex: 0 0 280px;
+                max-width: 280px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .stat-card {
+                padding: 1.25rem;
+            }
         }
 
         body {
@@ -200,40 +244,40 @@
                     <!-- Dashboard / Overview Tab -->
                     <div class="tab-pane fade show active" id="overview" role="tabpanel">
                         <!-- Statistics Grid -->
-                        <div class="row g-4 mb-4">
-                            <div class="col-md-3">
+                        <div class="row g-3 g-md-4 mb-4 mobile-scroll-container">
+                            <div class="col-sm-6 col-lg-3">
                                 <div class="stat-card">
                                     <span class="text-secondary small fw-bold">Active Builds</span>
                                     <div class="d-flex align-items-center mt-2">
                                         <h2 class="fw-bold mb-0 admin-stat-counter">14</h2>
-                                        <span class="badge bg-primary-subtle text-primary ms-auto">+2 this month</span>
+                                        <span class="badge bg-primary-subtle text-primary ms-auto d-none d-xl-inline">+2 this month</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-sm-6 col-lg-3">
                                 <div class="stat-card">
                                     <span class="text-secondary small fw-bold">Gross Revenue</span>
                                     <div class="d-flex align-items-center mt-2">
-                                        <h2 class="fw-bold mb-0">$<span class="admin-stat-counter">542000</span></h2>
-                                        <span class="badge bg-secondary-subtle text-secondary ms-auto">High Perf</span>
+                                        <h2 class="fw-bold mb-0 text-truncate">$<span class="admin-stat-counter">542000</span></h2>
+                                        <span class="badge bg-secondary-subtle text-secondary ms-auto d-none d-xl-inline">High Perf</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-sm-6 col-lg-3">
                                 <div class="stat-card">
                                     <span class="text-secondary small fw-bold">Customer NPS</span>
                                     <div class="d-flex align-items-center mt-2">
                                         <h2 class="fw-bold mb-0 admin-stat-counter">92</h2>
-                                        <span class="badge bg-primary-subtle text-primary ms-auto">Excellent</span>
+                                        <span class="badge bg-primary-subtle text-primary ms-auto d-none d-xl-inline">Excellent</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-sm-6 col-lg-3">
                                 <div class="stat-card">
                                     <span class="text-secondary small fw-bold">Messages</span>
                                     <div class="d-flex align-items-center mt-2">
                                         <h2 class="fw-bold mb-0 admin-stat-counter">28</h2>
-                                        <span class="badge bg-accent-subtle text-accent ms-auto">Pending</span>
+                                        <span class="badge bg-accent-subtle text-accent ms-auto d-none d-xl-inline">Pending</span>
                                     </div>
                                 </div>
                             </div>
@@ -244,9 +288,9 @@
                     <div class="tab-pane fade" id="builds" role="tabpanel">
                         <!-- Projects List Table -->
                         <div class="custom-card bg-white border-0 shadow-sm overflow-hidden p-0 mb-4">
-                            <div class="p-4 d-flex justify-content-between align-items-center">
+                            <div class="p-3 p-md-4 d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-3">
                                 <h5 class="mb-0">Pipeline Overview</h5>
-                                <button class="btn btn-primary btn-sm rounded-pill">+ Add New Build</button>
+                                <button class="btn btn-primary btn-sm rounded-pill w-auto align-self-start align-self-sm-center">+ Add New Build</button>
                             </div>
                             <div class="table-responsive">
                                 <table class="table table-hover align-middle border-0 mb-0" style="min-width: 800px;">
@@ -324,9 +368,9 @@
                     <!-- Customers Tab -->
                     <div class="tab-pane fade" id="customers" role="tabpanel">
                         <div class="custom-card bg-white border-0 shadow-sm p-4">
-                            <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
                                 <h5 class="mb-0">Customer Directory</h5>
-                                <div class="input-group w-50">
+                                <div class="input-group w-100 w-md-50">
                                     <input type="text" class="form-control border-end-0" placeholder="Search customers...">
                                     <span class="input-group-text bg-white border-start-0 text-secondary"><i class="bi bi-search"></i></span>
                                 </div>
@@ -396,26 +440,26 @@
 
                     <!-- Finance Tab -->
                     <div class="tab-pane fade" id="finance" role="tabpanel">
-                        <div class="row g-4 mb-4">
-                            <div class="col-md-4">
+                        <div class="row g-3 g-md-4 mb-4 mobile-scroll-container">
+                            <div class="col-sm-6 col-lg-4">
                                 <div class="stat-card border-start border-primary border-4">
                                     <span class="text-secondary small fw-bold">Month-to-Date Revenue</span>
                                     <h3 class="fw-bold mt-2">$42,850</h3>
-                                    <p class="text-primary small mb-0"><i class="bi bi-arrow-up"></i> 12% from last month</p>
+                                    <p class="text-primary small mb-0"><i class="bi bi-arrow-up"></i> 12%</p>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-sm-6 col-lg-4">
                                 <div class="stat-card border-start border-secondary border-4">
-                                    <span class="text-secondary small fw-bold">Average Project Value</span>
+                                    <span class="text-secondary small fw-bold">Avg Project Value</span>
                                     <h3 class="fw-bold mt-2">$78,200</h3>
-                                    <p class="text-secondary small mb-0">Total 15 Active Projects</p>
+                                    <p class="text-secondary small mb-0">15 Active Projects</p>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-sm-12 col-lg-4">
                                 <div class="stat-card border-start border-accent border-4">
                                     <span class="text-secondary small fw-bold">Pending Invoices</span>
                                     <h3 class="fw-bold mt-2">$15,400</h3>
-                                    <p class="text-accent small mb-0">Due in next 7 days</p>
+                                    <p class="text-accent small mb-0">Due in 7 days</p>
                                 </div>
                             </div>
                         </div>

@@ -144,6 +144,27 @@
             font-size: 1.2rem;
         }
 
+        /* Enforce table scrolling on mobile */
+        .table-responsive {
+            display: block !important;
+            width: 100% !important;
+            overflow-x: auto !important;
+            -webkit-overflow-scrolling: touch !important;
+        }
+
+        /* Custom Scrollbar */
+        .table-responsive::-webkit-scrollbar {
+            height: 6px;
+        }
+        .table-responsive::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.05);
+            border-radius: 10px;
+        }
+        .table-responsive::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+        }
+
         .finish-option-card {
             cursor: pointer;
             transition: var(--transition);
@@ -206,29 +227,31 @@
 
             <!-- Main Content Area -->
             <main class="flex-grow-1 p-lg-5 p-4">
-                <header class="mb-5 slide-left">
+                <header class="mb-4 mb-md-5 slide-left">
                     <!-- Mobile Header (Menu left, Logo right) -->
-                    <div class="d-flex d-lg-none justify-content-between align-items-center mb-3">
-                        <div class="d-flex align-items-center gap-2">
-                            <button class="btn btn-outline-secondary sidebar-toggle p-1 border-0 me-1" id="sidebarToggle" aria-label="Open navigation">
+                    <div class="d-flex d-lg-none justify-content-between align-items-center mb-4">
+                        <div class="d-flex align-items-center gap-1">
+                            <button class="btn btn-outline-secondary sidebar-toggle p-2 border-0" id="sidebarToggle" aria-label="Open navigation">
                                 <i class="bi bi-list fs-2"></i>
                             </button>
                             <a href="index.html" class="header-branding d-flex align-items-center gap-2 text-decoration-none">
                                 <i class="bi bi-house-heart text-primary fs-4"></i>
-                                <span class="fw-bold text-dark-emphasis" style="font-size: 1rem;">TinyDream</span>
+                                <span class="fw-bold text-dark-emphasis d-none d-sm-inline" style="font-size: 1rem;">TinyDream</span>
                             </a>
                         </div>
-                        <button class="rtl-toggle" aria-label="Toggle RTL Mode">RTL</button>
-                        <button class="theme-toggle" aria-label="Toggle Dark Mode">
-                            <i class="bi bi-moon-stars"></i>
-                        </button>
+                        <div class="d-flex align-items-center gap-2">
+                            <button class="rtl-toggle" aria-label="Toggle RTL Mode">RTL</button>
+                            <button class="theme-toggle" aria-label="Toggle Dark Mode">
+                                <i class="bi bi-moon-stars"></i>
+                            </button>
+                        </div>
                     </div>
 
                     <!-- Dashboard Welcome / Controls -->
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
-                            <h2 class="fw-bold mb-0 text-dark-emphasis" style="font-size: clamp(1.4rem, 4vw, 2.2rem);">Welcome, Jane</h2>
-                            <p class="text-secondary small mb-0 d-none d-md-block">Today's Data Overview: March 23, 2026</p>
+                            <h2 class="fw-bold mb-1 text-dark-emphasis" style="font-size: clamp(1.4rem, 5vw, 2.2rem);">Welcome, Jane</h2>
+                            <p class="text-secondary small mb-0 d-none d-md-block">March 23, 2026</p>
                         </div>
                         <div class="d-none d-lg-flex align-items-center gap-3">
                             <button class="rtl-toggle" aria-label="Toggle RTL Mode">RTL</button>
@@ -283,11 +306,11 @@
 
                             <!-- Payment Overview -->
                             <div class="col-lg-4">
-                                <div class="custom-card bg-white border-0 shadow-sm">
+                                <div class="custom-card bg-white border-0 shadow-sm h-100">
                                     <h5 class="mb-4">Financials Quick View</h5>
                                     <div class="p-3 bg-light rounded-4 mb-4">
-                                        <small class="text-muted uppercase fw-bold d-block mb-1"
-                                            style="font-size: 10px;">TOTAL CONTRACT</small>
+                                        <small class="text-muted text-uppercase fw-bold d-block mb-1"
+                                            style="font-size: 10px; letter-spacing: 0.5px;">TOTAL CONTRACT</small>
                                         <h3 class="fw-bold mb-0 text-primary">$89,450.00</h3>
                                     </div>
                                     <div class="mb-4">
@@ -297,7 +320,7 @@
                                         </div>
                                     </div>
                                     <div class="text-center mt-auto">
-                                        <button class="btn btn-primary px-4 py-2 mb-2 w-100">Make Payment</button>
+                                        <button class="btn btn-primary px-4 py-2 mb-2 w-100 rounded-pill">Make Payment</button>
                                     </div>
                                 </div>
                             </div>
@@ -344,40 +367,37 @@
                         <div class="custom-card bg-white border-0 shadow-sm p-4">
                             <h4 class="mb-4">Pending Design Selections</h4>
                             <div class="row g-4">
-                                <div class="col-md-4">
-                                    <div class="finish-option-card card rounded-4 border p-3 border-opacity-25"
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="finish-option-card card rounded-4 border p-3 h-100 border-opacity-25"
                                         data-category="exterior-color">
                                         <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=300&h=200&fit=crop"
-                                            class="rounded-3 mb-3" alt="Forest Green">
+                                            class="rounded-3 mb-3 w-100" alt="Forest Green">
                                         <h6>Exterior Siding: Forest Green</h6>
                                         <p class="text-secondary small mb-3">Durable Vertical Cedar Panel.</p>
-                                        <div class="text-center">
-                                            <button class="btn btn-sm btn-outline-primary px-3">Select for
-                                                Build</button>
+                                        <div class="text-center mt-auto">
+                                            <button class="btn btn-sm btn-outline-primary px-3 rounded-pill">Select</button>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="finish-option-card card rounded-4 border p-3 border-opacity-25"
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="finish-option-card card rounded-4 border p-3 h-100 border-opacity-25"
                                         data-category="exterior-color">
                                         <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=300&h=200&fit=crop"
-                                            class="rounded-3 mb-3" alt="Charcoal Black">
+                                            class="rounded-3 mb-3 w-100" alt="Charcoal Black">
                                         <h6>Exterior Siding: Charcoal Black</h6>
                                         <p class="text-secondary small mb-3">Sleek Metal Corrugated Look.</p>
-                                        <div class="text-center">
-                                            <button class="btn btn-sm btn-outline-primary px-3">Select for
-                                                Build</button>
+                                        <div class="text-center mt-auto">
+                                            <button class="btn btn-sm btn-outline-primary px-3 rounded-pill">Select</button>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-12 col-md-4">
                                     <div
-                                        class="custom-card border-0 bg-primary text-center d-flex flex-column align-items-center justify-content-center p-4 h-100">
+                                        class="custom-card border-0 bg-primary text-center d-flex flex-column align-items-center justify-content-center p-4 h-100 rounded-4">
                                         <i class="bi bi-plus-circle text-white fs-1 mb-3"></i>
                                         <h5 class="text-white">Custom Finishes?</h5>
-                                        <p class="small text-white opacity-75">Request a unique material or color that isn't
-                                            listed here.</p>
-                                        <button class="btn btn-link text-white fw-bold p-0">Contact Designer</button>
+                                        <p class="small text-white opacity-75">Request a unique material or color.</p>
+                                        <button class="btn btn-link text-white fw-bold p-0 text-decoration-none">Contact Designer</button>
                                     </div>
                                 </div>
                             </div>

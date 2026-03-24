@@ -11,7 +11,7 @@
     --bg-color: #ffffff;
     --bg-secondary: #f8f9fa;
     --text-primary: #1a1a1a;
-    --text-secondary: #6c757d;
+    --text-secondary: #4a4a4a;
     --border-color: #dee2e6;
     --shadow-color: rgba(0, 0, 0, 0.1);
     --glass-bg: rgba(255, 255, 255, 0.8);
@@ -134,6 +134,9 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     transition: background-color 0.4s ease, color 0.4s ease, direction 0.4s ease;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 /* RTL Mode Support & Bootstrap Overrides */
@@ -314,6 +317,8 @@ html {
 .animate-on-scroll {
     opacity: 0;
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    backface-visibility: hidden;
+    will-change: transform, opacity;
 }
 
 .animate-up {
@@ -397,6 +402,8 @@ html {
 
 .pop-up {
     animation: popUp 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    backface-visibility: hidden;
+    will-change: transform, opacity;
 }
 
 /* Glassmorphism Refinement */
@@ -907,7 +914,61 @@ main .stat-card {
     border-radius: 4px;
 }
 
-/* Footer */
+/* Footer Styling - High Contrast & Clarity */
+footer {
+    background: var(--bg-secondary) !important;
+    padding: 80px 0 40px !important;
+}
+
+footer p, 
+footer .opacity-75,
+footer .text-secondary {
+    color: var(--text-primary) !important;
+    opacity: 1 !important; /* Force high contrast for readability */
+    font-weight: 500 !important;
+    line-height: 1.8 !important;
+}
+
+footer h5 {
+    color: var(--text-primary) !important;
+    font-weight: 700 !important;
+    margin-bottom: 25px !important;
+    font-size: 0.95rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.8px !important;
+}
+
+.footer-link {
+    color: var(--text-primary) !important;
+    display: block !important;
+    margin-bottom: 12px !important;
+    text-decoration: none !important;
+    transition: var(--transition) !important;
+    font-weight: 500 !important;
+}
+
+.footer-link:hover {
+    color: var(--primary) !important;
+    padding-left: 8px !important;
+    opacity: 1 !important;
+}
+
+[data-bs-theme="dark"] footer p, 
+[data-bs-theme="dark"] footer .opacity-75,
+[data-bs-theme="dark"] footer .text-secondary,
+[data-bs-theme="dark"] .footer-link {
+    color: #ced4da !important;
+}
+
+[data-bs-theme="dark"] .footer-link:hover {
+    color: #ffffff !important;
+}
+
+[data-bs-theme="dark"] .footer-link {
+    color: #ced4da !important;
+}
+
+
 footer {
     background: var(--bg-secondary);
     padding: 80px 0 20px;
@@ -1182,14 +1243,22 @@ footer .btn.rounded-circle {
     transform: translateY(20px);
 }
 
-.back-to-top-fixed:hover {
+@media (hover: hover) {
+    .back-to-top-fixed:hover {
+        background: var(--accent);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.back-to-top-fixed:active {
+    transform: scale(0.9);
     background: var(--accent);
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 .back-to-top-fixed i {
     font-size: 1.5rem;
+    pointer-events: none;
 }
 
 @media (max-width: 575px) {
@@ -1198,5 +1267,20 @@ footer .btn.rounded-circle {
         right: 20px;
         width: 44px;
         height: 44px;
+    }
+}
+.text-high-contrast {
+    color: #000000 !important;
+    opacity: 1 !important;
+}
+
+[data-bs-theme="dark"] .text-high-contrast {
+    color: #ffffff !important;
+}
+
+@media (max-width: 991.98px) {
+    footer .container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
     }
 }

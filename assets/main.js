@@ -127,6 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
     topBtn.innerHTML = '<i class="bi bi-arrow-up"></i>';
     topBtn.className = 'back-to-top-fixed shadow';
     topBtn.setAttribute('aria-label', 'Back to Top');
+    topBtn.type = 'button';
     document.body.appendChild(topBtn);
 
     window.addEventListener('scroll', () => {
@@ -137,12 +138,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    topBtn.addEventListener('click', () => {
+    const scrollToTop = (e) => {
+        if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         });
+    };
+
+    topBtn.addEventListener('click', (e) => {
+        scrollToTop(e);
     });
+    topBtn.addEventListener('touchstart', (e) => {
+        scrollToTop(e);
+    }, { passive: false });
 
     // 9. Loading Indicator
     window.addEventListener('load', () => {
