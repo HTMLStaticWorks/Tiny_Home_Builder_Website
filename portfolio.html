@@ -11,6 +11,41 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css?v=10">
+    <style>
+        .page-hero {
+            position: relative;
+            padding: 140px 0 100px;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white !important;
+            margin-bottom: 0;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(15, 20, 13, 0.6), rgba(15, 20, 13, 0.85));
+            z-index: 1;
+        }
+
+        .page-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-hero h1 {
+            color: white !important;
+        }
+
+        .page-hero .lead {
+            color: rgba(255, 255, 255, 0.8) !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -55,25 +90,23 @@
                         <a href="login.html" class="btn btn-outline-primary btn-sm px-4 rounded-pill navbar-btn">Login</a>
                     </li>
                     <li class="nav-item ms-xl-2">
-                        <a href="register.html" class="btn btn-primary btn-sm px-4 rounded-pill navbar-btn">Sign Up</a>
+
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Page Title Section -->
-    <section class="section-padding" style="margin-top: 80px;">
-        <div class="container text-center">
-            <span class="text-primary fw-bold text-uppercase tracking-wider">Showcase</span>
+    <section class="page-hero text-center" style="background-image: url('https://images.pexels.com/photos/1974596/pexels-photo-1974596.jpeg');">
+        <div class="container">
             <h1 class="display-4 fw-bold mb-4">A Legacy of Lived-in Luxury</h1>
-            <p class="lead text-secondary mx-auto" style="max-width: 700px;">Every home we build is a unique piece of
+            <p class="lead mx-auto" style="max-width: 700px;">Every home we build is a unique piece of
                 architecture tailored to the lives of our clients. Explore our handcrafted portfolio.</p>
         </div>
     </section>
 
     <!-- Portfolio Gallery -->
-    <section class="section-padding pt-0 overflow-hidden">
+    <section class="section-padding overflow-hidden">
         <div class="container">
             <div class="row g-4">
                 <!-- Project 1 -->

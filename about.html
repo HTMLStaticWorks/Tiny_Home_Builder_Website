@@ -11,6 +11,51 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css?v=10">
+    <style>
+        .page-hero {
+            position: relative;
+            padding: 140px 0 100px;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white !important;
+            margin-bottom: 0;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(15, 20, 13, 0.6), rgba(15, 20, 13, 0.85));
+            z-index: 1;
+        }
+
+        .page-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-hero h1 {
+            color: white !important;
+        }
+
+        .page-hero .lead {
+            color: rgba(255, 255, 255, 0.8) !important;
+        }
+
+        .partner-logo i {
+            transition: var(--transition);
+        }
+
+        .partner-logo:hover i {
+            opacity: 1 !important;
+            transform: scale(1.1);
+            color: var(--primary) !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -56,7 +101,7 @@
                         <a href="login.html" class="btn btn-outline-primary btn-sm px-4 rounded-pill navbar-btn">Login</a>
                     </li>
                     <li class="nav-item ms-xl-2">
-                        <a href="register.html" class="btn btn-primary btn-sm px-4 rounded-pill navbar-btn">Sign Up</a>
+
                     </li>
                 </ul>
             </div>
@@ -64,11 +109,11 @@
     </nav>
 
     <!-- Page Title Banner -->
-    <section class="section-padding bg-light" style="margin-top: 80px;">
-        <div class="container text-center pop-up">
+    <section class="page-hero text-center" style="background-image: url('https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg');">
+        <div class="container pop-up">
             <span class="text-primary fw-bold text-uppercase tracking-wider">Our Story</span>
             <h1 class="display-4 fw-bold mb-4">Crafting Freedom Since 2018</h1>
-            <p class="lead text-secondary mx-auto" style="max-width: 700px;">We started in a small workshop with a big
+            <p class="lead mx-auto mb-0" style="max-width: 700px;">We started in a small workshop with a big
                 dream: to make intentional living accessible through high-quality architecture.</p>
         </div>
     </section>
@@ -194,16 +239,40 @@
     </section>
 
     <!-- Partners / Suppliers -->
-    <section class="section-padding bg-light">
+    <section class="py-5 bg-dark">
         <div class="container text-center">
-            <h5 class="text-high-contrast mb-5 fw-bold">TRUSTED BY INDUSTRY PARTNERS</h5>
-            <div class="row g-4 align-items-center">
-                <div class="col-md-2 col-6"><i class="bi bi-box-seam fs-2 text-high-contrast"></i></div>
-                <div class="col-md-2 col-6"><i class="bi bi-hammer fs-2 text-high-contrast"></i></div>
-                <div class="col-md-2 col-6"><i class="bi bi-lightning-charge fs-2 text-high-contrast"></i></div>
-                <div class="col-md-2 col-6"><i class="bi bi-droplet fs-2 text-high-contrast"></i></div>
-                <div class="col-md-2 col-6"><i class="bi bi-tree-fill fs-2 text-high-contrast"></i></div>
-                <div class="col-md-2 col-6"><i class="bi bi-house-door fs-2 text-high-contrast"></i></div>
+            <h6 class="text-primary fw-bold text-uppercase tracking-widest mb-5">Trusted by Industry Partners</h6>
+            <div class="row g-5 align-items-center justify-content-center">
+                <div class="col-md-2 col-4">
+                    <div class="partner-logo">
+                        <i class="bi bi-box-seam fs-2 text-white opacity-75"></i>
+                    </div>
+                </div>
+                <div class="col-md-2 col-4">
+                    <div class="partner-logo">
+                        <i class="bi bi-hammer fs-2 text-white opacity-75"></i>
+                    </div>
+                </div>
+                <div class="col-md-2 col-4">
+                    <div class="partner-logo">
+                        <i class="bi bi-lightning-charge fs-2 text-white opacity-75"></i>
+                    </div>
+                </div>
+                <div class="col-md-2 col-4">
+                    <div class="partner-logo">
+                        <i class="bi bi-droplet fs-2 text-white opacity-75"></i>
+                    </div>
+                </div>
+                <div class="col-md-2 col-4">
+                    <div class="partner-logo">
+                        <i class="bi bi-tree-fill fs-2 text-white opacity-75"></i>
+                    </div>
+                </div>
+                <div class="col-md-2 col-4">
+                    <div class="partner-logo">
+                        <i class="bi bi-house-door fs-2 text-white opacity-75"></i>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

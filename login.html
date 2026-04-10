@@ -22,6 +22,18 @@
         }
 
 
+        .social-icon-btn {
+            width: 48px;
+            height: 48px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            border-radius: 50%;
+            padding: 0;
+            flex-shrink: 0;
+        }
+
         @media (max-height: 700px) {
             .custom-card {
                 padding: 1.5rem !important;
@@ -48,72 +60,75 @@
 
 
 
-    <div class="container py-3">
-        <div class="row justify-content-center">
-            <div class="col-lg-5">
-                <div class="custom-card mx-auto border-0 shadow-lg text-center position-relative">
-                    <!-- Integrated Theme Toggle (Consistent on all screens) -->
-                    <div class="d-flex justify-content-end gap-2 mb-3">
-                        <button class="rtl-toggle shadow-sm btn-sm" aria-label="Toggle RTL Mode">RTL</button>
-                        <button class="theme-toggle shadow-sm btn-sm" aria-label="Toggle Dark Mode">
-                            <i class="bi bi-moon-stars"></i>
-                        </button>
-                    </div>
-
-                    <a href="index.html" class="navbar-brand mb-4 justify-content-center w-100">
-                        <i class="bi bi-house-heart"></i>
-                        <span>TinyDream</span>
-                    </a>
-
-                    <h3 class="fw-bold mb-1">Welcome Back</h3>
-                    <p class="text-secondary small mb-4">Access your dashboard to track your build.</p>
-
-                    <form action="dashboard-user.html" method="GET" class="text-start needs-validation" novalidate>
-                        <div class="mb-3">
-                            <label class="form-label fw-bold small">Email Address</label>
-                            <input type="email" class="form-control bg-light border-0 py-2"
-                                placeholder="john@example.com" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label fw-bold small">Password</label>
-                            <div class="position-relative">
-                                <input type="password" class="form-control bg-light border-0 py-2"
-                                    placeholder="••••••••" required>
-                            </div>
-                        </div>
-                        <div class="mb-4 d-flex justify-content-between align-items-center flex-wrap gap-2">
-                            <div class="form-check mb-0">
-                                <input type="checkbox" class="form-check-input" id="rememberMe">
-                                <label class="form-check-label small text-secondary text-nowrap" for="rememberMe">Remember me</label>
-                            </div>
-                            <a href="#" class="small text-primary text-decoration-none text-nowrap">Forgotten Password?</a>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100 py-2 fw-bold mb-3">Login</button>
-                    </form>
-
-                    <div class="d-flex align-items-center mb-3">
-                        <hr class="flex-grow-1 border-secondary opacity-25">
-                        <span class="mx-3 text-muted" style="font-size: 10px;">Or Login With</span>
-                        <hr class="flex-grow-1 border-secondary opacity-25">
-                    </div>
-
-                    <div class="d-flex gap-2 mb-4">
-                        <button class="btn btn-outline-secondary w-100 py-2 small"><i class="bi bi-google me-2"></i>
-                            Google</button>
-                        <button class="btn btn-outline-secondary w-100 py-2 small"><i class="bi bi-facebook me-2"></i>
-                            Facebook</button>
-                    </div>
-
-                    <p class="text-muted small mb-0">No account? <a href="register.html"
-                            class="text-primary fw-bold text-decoration-none border-bottom border-primary">Create
-                            one</a></p>
+<div class="container py-3">
+    <div class="row justify-content-center">
+        <div class="col-lg-5">
+            <div class="custom-card mx-auto border-0 shadow-lg text-center position-relative">
+                <!-- Integrated Theme Toggle (Consistent on all screens) -->
+                <div class="d-flex justify-content-end gap-2 mb-3">
+                    <button class="rtl-toggle shadow-sm btn-sm" aria-label="Toggle RTL Mode">RTL</button>
+                    <button class="theme-toggle shadow-sm btn-sm" aria-label="Toggle Dark Mode">
+                        <i class="bi bi-moon-stars"></i>
+                    </button>
                 </div>
+
+                <a href="index.html" class="navbar-brand mb-4 justify-content-center w-100">
+                    <i class="bi bi-house-heart"></i>
+                    <span>TinyDream</span>
+                </a>
+
+                <h3 class="fw-bold mb-1">Welcome Back</h3>
+                <p class="text-secondary small mb-4">Access your dashboard to track your build.</p>
+
+                <form action="dashboard-user.html" method="GET" class="text-start needs-validation" novalidate>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold small">Email Address</label>
+                        <input type="email" class="form-control bg-light border-0 py-2" placeholder="john@example.com"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold small">Password</label>
+                        <div class="position-relative">
+                            <input type="password" class="form-control bg-light border-0 py-2" placeholder="••••••••"
+                                required>
+                        </div>
+                    </div>
+                    <div class="mb-4 d-flex justify-content-between align-items-center flex-wrap gap-2">
+                        <div class="form-check mb-0">
+                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <label class="form-check-label small text-secondary text-nowrap" for="rememberMe">Remember
+                                me</label>
+                        </div>
+                        <a href="#" class="small text-primary text-decoration-none text-nowrap">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 py-2 fw-bold mb-3">Login</button>
+                </form>
+
+                <div class="d-flex align-items-center mb-3">
+                    <hr class="flex-grow-1 border-secondary opacity-25">
+                    <span class="mx-3 text-muted" style="font-size: 10px;">Or Login With</span>
+                    <hr class="flex-grow-1 border-secondary opacity-25">
+                </div>
+
+                <div class="d-flex justify-content-center gap-3 mb-4">
+                    <button class="btn btn-outline-secondary social-icon-btn" aria-label="Login with Google"><i
+                            class="bi bi-google"></i></button>
+                    <button class="btn btn-outline-secondary social-icon-btn" aria-label="Login with Facebook"><i
+                            class="bi bi-facebook"></i></button>
+                    <button class="btn btn-outline-secondary social-icon-btn" aria-label="Login with Apple"><i
+                            class="bi bi-apple"></i></button>
+                </div>
+
+                <p class="text-muted small mb-0">No account? <a href="register.html"
+                        class="text-primary fw-bold text-decoration-none border-bottom border-primary">Create
+                        one</a></p>
             </div>
         </div>
     </div>
+</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/main.js"></script>
 </body>
 
 </html>
