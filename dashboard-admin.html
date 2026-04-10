@@ -290,6 +290,9 @@
                     <a href="#finance" class="sidebar-link text-decoration-none" data-bs-toggle="pill" role="tab">
                         <i class="bi bi-cash-stack"></i> Finance
                     </a>
+                    <a href="#update-progress" class="sidebar-link text-decoration-none" data-bs-toggle="pill" role="tab">
+                        <i class="bi bi-gear-wide-connected"></i> Build Progress
+                    </a>
                     <a href="#editor" class="sidebar-link text-decoration-none" data-bs-toggle="pill" role="tab">
                         <i class="bi bi-pencil-square"></i> Content Editor
                     </a>
@@ -300,7 +303,7 @@
 
                 <div class="mt-auto pt-5">
                     <hr>
-                    <a href="login.html" class="sidebar-link text-secondary text-decoration-none">
+                    <a href="index.html" class="sidebar-link text-secondary text-decoration-none">
                         <i class="bi bi-box-arrow-left"></i> Logout
                     </a>
                 </div>
@@ -687,35 +690,95 @@
                         </div>
                     </div>
 
+                    <!-- Update Progress Tab -->
+                    <div class="tab-pane fade" id="update-progress" role="tabpanel">
+                        <div class="custom-card bg-white border-0 shadow-sm p-4">
+                            <h5 class="mb-4">Update Client Build Progress</h5>
+                            <div class="row g-4 align-items-end mb-5">
+                                <div class="col-md-5">
+                                    <label class="form-label small text-uppercase fw-bold">Select Active Project</label>
+                                    <select class="form-select form-select-lg bg-light border-0">
+                                        <option>#TH-882 - John Doe (The Nordic)</option>
+                                        <option>#TH-012 - Sarah Williams (The Summit)</option>
+                                        <option>#TH-925 - Michael Chen (The Breeze)</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label small text-uppercase fw-bold">Current Milestone</label>
+                                    <select class="form-select form-select-lg bg-light border-0">
+                                        <option>Phase 1: Trailer & Base</option>
+                                        <option selected>Phase 2: Wood Framing</option>
+                                        <option>Phase 3: Sheathing & Siding</option>
+                                        <option>Phase 4: Rough-In Electric/Plumbing</option>
+                                        <option>Phase 5: Interior Finishing</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <button class="btn btn-primary btn-lg w-100 rounded-pill">Update Status</button>
+                                </div>
+                            </div>
+
+                            <div class="border rounded-4 p-4 bg-light">
+                                <h6 class="fw-bold mb-3">Add Build Update & Photos</h6>
+                                <div class="mb-3">
+                                    <textarea class="form-control border-0" rows="4" placeholder="Briefly describe what was completed today..."></textarea>
+                                </div>
+                                <div class="d-flex gap-3 align-items-center">
+                                    <button class="btn btn-sm btn-outline-secondary px-3 rounded-pill"><i class="bi bi-camera me-2"></i>Upload Photos</button>
+                                    <span class="text-muted small">Max 5 photos per update</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Content Editor Tab -->
                     <div class="tab-pane fade" id="editor" role="tabpanel">
-                        <!-- Recent Messages Sidebar -->
-                        <div class="row">
-                            <div class="col-xl-12">
-                                <div class="custom-card border-0 bg-white shadow-sm p-4">
-                                    <h5 class="mb-4">Recent Client Inquiries (Content Management)</h5>
-                                    <div class="d-flex align-items-center mb-4 pb-3 border-bottom">
-                                        <div class="flex-shrink-0 bg-primary-subtle rounded-circle p-3 text-primary"><i
-                                                class="bi bi-envelope"></i></div>
-                                        <div class="ms-3 flex-grow-1">
-                                            <h6 class="mb-1">Inquiry for Custom Triple Axel Build</h6>
-                                            <p class="text-secondary small mb-0">From Emma Stone: "I saw the Oregon
-                                                escape and
-                                                want something similar..."</p>
-                                        </div>
-                                        <button class="btn btn-link text-primary p-0 fw-bold">Review</button>
+                        <div class="custom-card border-0 bg-white shadow-sm p-4">
+                            <h5 class="mb-4">Website Content Management</h5>
+                            <div class="row g-4">
+                                <div class="col-md-4">
+                                    <div class="p-4 border rounded-4 text-center h-100 transform-hover">
+                                        <i class="bi bi-layout-text-window-reverse fs-1 text-primary mb-3"></i>
+                                        <h6>Hero Section</h6>
+                                        <p class="text-secondary small">Edit main titles and hero images for all pages.</p>
+                                        <button class="btn btn-sm btn-outline-primary px-3 rounded-pill">Open Editor</button>
                                     </div>
-                                    <div class="d-flex align-items-center">
-                                        <div class="flex-shrink-0 bg-accent-subtle rounded-circle p-3 text-accent"><i
-                                                class="bi bi-image"></i></div>
-                                        <div class="ms-3 flex-grow-1">
-                                            <h6 class="mb-1">Finish Selection Approval Needed</h6>
-                                            <p class="text-secondary small mb-0">Project TH-0925: Client selected
-                                                Mahogany
-                                                siding. Confirm stock?</p>
-                                        </div>
-                                        <button class="btn btn-link text-primary p-0 fw-bold">Approve</button>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="p-4 border rounded-4 text-center h-100 transform-hover">
+                                        <i class="bi bi-currency-dollar fs-1 text-primary mb-3"></i>
+                                        <h6>Pricing & Tiers</h6>
+                                        <p class="text-secondary small">Update base prices and feature lists for models.</p>
+                                        <button class="btn btn-sm btn-outline-primary px-3 rounded-pill">Manage Tiers</button>
                                     </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="p-4 border rounded-4 text-center h-100 transform-hover">
+                                        <i class="bi bi-images fs-1 text-primary mb-3"></i>
+                                        <h6>Portfolio Gallery</h6>
+                                        <p class="text-secondary small">Add or remove projects from the work gallery.</p>
+                                        <button class="btn btn-sm btn-outline-primary px-3 rounded-pill">Upload Photos</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-5">
+                                <h6 class="fw-bold mb-4">Pending Client Inquiries</h6>
+                                <div class="d-flex align-items-center mb-4 pb-3 border-bottom">
+                                    <div class="flex-shrink-0 bg-primary-subtle rounded-circle p-3 text-primary"><i class="bi bi-envelope"></i></div>
+                                    <div class="ms-3 flex-grow-1">
+                                        <h6 class="mb-1">Inquiry for Custom Triple Axel Build</h6>
+                                        <p class="text-secondary small mb-0">From Emma Stone: "I saw the Oregon escape and want something similar..."</p>
+                                    </div>
+                                    <button class="btn btn-link text-primary p-0 fw-bold">Review</button>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-shrink-0 bg-accent-subtle rounded-circle p-3 text-accent"><i class="bi bi-image"></i></div>
+                                    <div class="ms-3 flex-grow-1">
+                                        <h6 class="mb-1">Finish Selection Approval Needed</h6>
+                                        <p class="text-secondary small mb-0">Project TH-0925: Client selected Mahogany siding. Confirm stock?</p>
+                                    </div>
+                                    <button class="btn btn-link text-primary p-0 fw-bold text-decoration-none">Approve</button>
                                 </div>
                             </div>
                         </div>

@@ -461,6 +461,13 @@ html {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
+@media (max-width: 991.98px) {
+    .btn-sm-mobile {
+        padding: 8px 18px !important;
+        font-size: 0.85rem !important;
+    }
+}
+
 /* Navbar Button Hover Effects & Height Balancing */
 .navbar-btn {
     height: 40px !important;
@@ -1283,4 +1290,14 @@ footer .btn.rounded-circle {
         padding-left: 20px !important;
         padding-right: 20px !important;
     }
+}
+
+/* Visibility fix for primary borders in dark mode */
+[data-bs-theme="dark"] .border-primary {
+    border-color: #8fb983 !important; /* Radiant green visibility */
+}
+
+/* Enhancing the shadow for better depth in dark mode */
+[data-bs-theme="dark"] .shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.4) !important;
 }

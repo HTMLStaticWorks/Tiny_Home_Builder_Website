@@ -45,6 +45,40 @@
         .page-hero .lead {
             color: rgba(255, 255, 255, 0.8) !important;
         }
+
+        /* Specialized table styling for high-fidelity comparison */
+        .comparison-table-wrapper {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .comparison-table th, 
+        .comparison-table td {
+            white-space: nowrap;
+            padding: 10px 16px !important;
+            vertical-align: middle !important;
+        }
+
+        .comparison-table thead th {
+            background-color: var(--primary) !important;
+            color: white !important;
+            border: none !important;
+            text-transform: none;
+            letter-spacing: normal;
+        }
+
+        /* Force green header on light mode specifically if needed */
+        html[data-bs-theme="light"] .comparison-table thead th {
+            background-color: #4a6741 !important;
+        }
+
+        .comparison-table tbody tr:nth-child(even) {
+            background-color: rgba(var(--primary-rgb), 0.03);
+        }
+
+        [data-bs-theme="dark"] .comparison-table tbody tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
     </style>
 </head>
 
@@ -106,17 +140,18 @@
         </div>
     </section>
 
-    <section class="section-padding">
+    <section class="py-5">
         <div class="container">
             <div class="row g-4 text-start">
                 <!-- Package 1: The Shell -->
                 <div class="col-lg-4 animate-on-scroll animate-left">
-                    <div class="custom-card border-0 shadow-sm h-100 p-4">
+                    <div class="custom-card border-0 shadow-sm h-100 p-4 justify-content-start">
                         <h5 class="text-primary fw-bold text-uppercase small">DIY Ready</h5>
                         <h2 class="mb-4">The Shell</h2>
                         <h4 class="display-6 fw-bold mb-4">$35k <small class="text-muted fs-6">starting</small></h4>
-                        <p class="text-secondary small mb-5">Perfect for the handy owner-builder. We handle the heavy
+                        <p class="text-secondary small mb-4">Perfect for the handy owner-builder. We handle the heavy
                             lifting, you handle the finishes.</p>
+                        <hr class="border-secondary opacity-10 mb-4">
                         <ul class="list-unstyled mb-5 text-secondary small">
                             <li class="mb-3 d-flex align-items-center"><i
                                     class="bi bi-check-circle-fill text-primary me-3"></i> Custom Trailer & Framing</li>
@@ -139,14 +174,15 @@
                 <!-- Package 2: The Turnkey -->
                 <div class="col-lg-4 animate-on-scroll animate-up">
                     <div
-                        class="custom-card border-primary border-3 shadow-lg h-100 p-4 transform-hover position-relative">
+                        class="custom-card border-primary border-3 shadow-lg h-100 p-4 transform-hover position-relative justify-content-start">
                         <div class="position-absolute top-0 end-0 p-3"><span
                                 class="badge bg-primary px-3 py-2 rounded-pill">MOST POPULAR</span></div>
                         <h5 class="text-primary fw-bold text-uppercase small">Move-In Ready</h5>
                         <h2 class="mb-4">The Turnkey</h2>
                         <h4 class="display-6 fw-bold mb-4">$75k <small class="text-muted fs-6">starting</small></h4>
-                        <p class="text-secondary small mb-5">A complete, professionally finished tiny home ready for you
+                        <p class="text-secondary small mb-4">A complete, professionally finished tiny home ready for you
                             to move in on day one.</p>
+                        <hr class="border-secondary opacity-10 mb-4">
                         <ul class="list-unstyled mb-5 text-secondary small">
                             <li class="mb-3 d-flex align-items-center"><i
                                     class="bi bi-check-circle-fill text-primary me-3"></i> Everything in Shell Tier</li>
@@ -171,12 +207,13 @@
 
                 <!-- Package 3: The Custom Luxury -->
                 <div class="col-lg-4 animate-on-scroll animate-right">
-                    <div class="custom-card border-0 shadow-sm h-100 p-4">
+                    <div class="custom-card border-0 shadow-sm h-100 p-4 justify-content-start">
                         <h5 class="text-primary fw-bold text-uppercase small">Dream Level</h5>
                         <h2 class="mb-4">The Luxury</h2>
                         <h4 class="display-6 fw-bold mb-4">$110k <small class="text-muted fs-6">starting</small></h4>
-                        <p class="text-secondary small mb-5">Push the boundaries of small architecture with premium tech
+                        <p class="text-secondary small mb-4">Push the boundaries of small architecture with premium tech
                             and architectural features.</p>
+                        <hr class="border-secondary opacity-10 mb-4">
                         <ul class="list-unstyled mb-5 text-secondary small">
                             <li class="mb-3 d-flex align-items-center"><i
                                     class="bi bi-check-circle-fill text-primary me-3"></i> Everything in Turnkey Tier
@@ -201,61 +238,65 @@
     </section>
 
     <!-- Comparison Table Section -->
-    <section class="section-padding bg-light">
-        <div class="container overflow-x-auto">
-            <div class="text-center mb-5">
-                <h2>Comparison of Features</h2>
-                <p class="text-secondary">See exactly what goes into each build tier.</p>
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="mb-2">Comparison of Features</h2>
+                <p class="text-secondary small">See exactly what goes into each build tier.</p>
             </div>
-            <div class="table-responsive">
-                <table class="table table-hover align-middle custom-card p-0 border-0 bg-white mb-0" style="min-width: 600px;">
-                    <thead class="bg-primary text-white border-0">
-                        <tr>
-                            <th class="p-4 border-0">Feature</th>
-                            <th class="p-4 border-0 text-center">The Shell</th>
-                            <th class="p-4 border-0 text-center">The Turnkey</th>
-                            <th class="p-4 border-0 text-center">The Luxury</th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-secondary small">
-                        <tr>
-                            <td class="p-4 border-0 fw-bold">Custom Iron Eagle Trailer</td>
-                            <td class="p-4 border-0 text-center text-primary fs-4"><i class="bi bi-check"></i></td>
-                            <td class="p-4 border-0 text-center text-primary fs-4"><i class="bi bi-check"></i></td>
-                            <td class="p-4 border-0 text-center text-primary fs-4"><i class="bi bi-check"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="p-4 border-0 fw-bold">2x4 Wood Stud Framing</td>
-                            <td class="p-4 border-0 text-center text-primary fs-4"><i class="bi bi-check"></i></td>
-                            <td class="p-4 border-0 text-center text-primary fs-4"><i class="bi bi-check"></i></td>
-                            <td class="p-4 border-0 text-center text-primary fs-4"><i class="bi bi-check"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="p-4 border-0 fw-bold">Cedar Siding & Trim</td>
-                            <td class="p-4 border-0 text-center text-primary fs-4"><i class="bi bi-check"></i></td>
-                            <td class="p-4 border-0 text-center text-primary fs-4"><i class="bi bi-check"></i></td>
-                            <td class="p-4 border-0 text-center text-primary fs-4"><i class="bi bi-check"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="p-4 border-0 fw-bold">Full Interior Finishing</td>
-                            <td class="p-4 border-0 text-center text-muted opacity-50"><i class="bi bi-dash"></i></td>
-                            <td class="p-4 border-0 text-center text-primary fs-4"><i class="bi bi-check"></i></td>
-                            <td class="p-4 border-0 text-center text-primary fs-4"><i class="bi bi-check"></i></td>
-                        </tr>
-                        <tr>
-                            <td class="p-4 border-0 fw-bold">Off-grid Solar Pack</td>
-                            <td class="p-4 border-0 text-center text-muted opacity-50"><i class="bi bi-dash"></i></td>
-                            <td class="p-4 border-0 text-center text-secondary small">Optional</td>
-                            <td class="p-4 border-0 text-center text-primary fs-4"><i class="bi bi-check"></i></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="comparison-table-wrapper">
+                <div class="table-responsive shadow-sm rounded-4 overflow-hidden border">
+                    <table class="table comparison-table table-hover align-middle bg-white mb-0">
+                        <thead>
+                            <tr>
+                                <th style="width: 31%;">Feature</th>
+                                <th class="text-center" style="width: 23%;">The Shell</th>
+                                <th class="text-center" style="width: 23%;">The Turnkey</th>
+                                <th class="text-center" style="width: 23%;">The Luxury</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-secondary">
+                            <tr>
+                                <td class="fw-bold small">Custom Iron Eagle Trailer</td>
+                                <td class="text-center text-primary fs-5"><i class="bi bi-check-lg"></i></td>
+                                <td class="text-center text-primary fs-5"><i class="bi bi-check-lg"></i></td>
+                                <td class="text-center text-primary fs-5"><i class="bi bi-check-lg"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold small">2x4 Wood Stud Framing</td>
+                                <td class="text-center text-primary fs-5"><i class="bi bi-check-lg"></i></td>
+                                <td class="text-center text-primary fs-5"><i class="bi bi-check-lg"></i></td>
+                                <td class="text-center text-primary fs-5"><i class="bi bi-check-lg"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold small">Cedar Siding & Trim</td>
+                                <td class="text-center text-primary fs-5"><i class="bi bi-check-lg"></i></td>
+                                <td class="text-center text-primary fs-5"><i class="bi bi-check-lg"></i></td>
+                                <td class="text-center text-primary fs-5"><i class="bi bi-check-lg"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold small">Full Interior Finishing</td>
+                                <td class="text-center text-muted opacity-25"><i class="bi bi-dash-lg"></i></td>
+                                <td class="text-center text-primary fs-5"><i class="bi bi-check-lg"></i></td>
+                                <td class="text-center text-primary fs-5"><i class="bi bi-check-lg"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="fw-bold small">Off-grid Solar Pack</td>
+                                <td class="text-center text-muted opacity-25"><i class="bi bi-dash-lg"></i></td>
+                                <td class="text-center text-secondary small fw-bold">Optional</td>
+                                <td class="text-center text-primary fs-5"><i class="bi bi-check-lg"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
+        </div>
+    </section>
         </div>
     </section>
 
     <!-- Financing CTA -->
-    <section class="section-padding text-center">
+    <section class="py-5 text-center">
         <div class="container">
             <h2 class="mb-4">Flexible Financing Available</h2>
             <p class="text-secondary mb-5 mx-auto" style="max-width: 600px;">We've partnered with Hearth and Lightstream
@@ -285,7 +326,7 @@
     </section>
 
     <!-- Final CTA Section -->
-    <section class="section-padding pt-0">
+    <section class="py-5">
         <div class="container">
             <div class="bg-primary rounded-5 p-4 p-lg-5 text-center text-white position-relative overflow-hidden shadow-lg animate-on-scroll animate-up">
                 <div class="position-relative z-1">

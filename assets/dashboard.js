@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Ensure page scrolls to top on tab change, especially important for mobile
             window.scrollTo({ top: 0, behavior: 'instant' });
             
-            if (window.innerWidth < 1024 && sidebar && sidebar.classList.contains('active')) {
+            if (window.innerWidth < 1200 && sidebar && sidebar.classList.contains('active')) {
                 toggleSidebar();
             }
         });

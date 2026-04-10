@@ -80,17 +80,21 @@
                 <h3 class="fw-bold mb-1">Welcome Back</h3>
                 <p class="text-secondary small mb-4">Access your dashboard to track your build.</p>
 
+                <!-- Form Section -->
                 <form action="dashboard-user.html" method="GET" class="text-start needs-validation" novalidate>
                     <div class="mb-3">
                         <label class="form-label fw-bold small">Email Address</label>
-                        <input type="email" class="form-control bg-light border-0 py-2" placeholder="john@example.com"
-                            required>
+                        <input type="email" class="form-control bg-light border-0 py-2"
+                            placeholder="Enter your mail address" required>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-4">
                         <label class="form-label fw-bold small">Password</label>
                         <div class="position-relative">
-                            <input type="password" class="form-control bg-light border-0 py-2" placeholder="••••••••"
+                            <input type="password" id="passwordInput" class="form-control bg-light border-0 py-2 pe-5" placeholder="••••••••"
                                 required>
+                            <button type="button" class="btn position-absolute end-0 top-50 translate-middle-y border-0 pe-3 py-0" onclick="togglePassword('passwordInput', this)">
+                                <i class="bi bi-eye text-muted"></i>
+                            </button>
                         </div>
                     </div>
                     <div class="mb-4 d-flex justify-content-between align-items-center flex-wrap gap-2">
@@ -101,15 +105,16 @@
                         </div>
                         <a href="#" class="small text-primary text-decoration-none text-nowrap">Forgot Password?</a>
                     </div>
-                    <button type="submit" class="btn btn-primary w-100 py-2 fw-bold mb-3">Login</button>
+                    <button type="submit" class="btn btn-primary w-100 py-3 fw-bold mb-4">Login</button>
                 </form>
 
-                <div class="d-flex align-items-center mb-3">
+                <div class="d-flex align-items-center mb-4">
                     <hr class="flex-grow-1 border-secondary opacity-25">
-                    <span class="mx-3 text-muted" style="font-size: 10px;">Or Login With</span>
+                    <span class="mx-3 text-muted text-uppercase tracking-widest" style="font-size: 10px;">OR CONTINUE WITH</span>
                     <hr class="flex-grow-1 border-secondary opacity-25">
                 </div>
 
+                <!-- Social Login Section -->
                 <div class="d-flex justify-content-center gap-3 mb-4">
                     <button class="btn btn-outline-secondary social-icon-btn" aria-label="Login with Google"><i
                             class="bi bi-google"></i></button>
@@ -119,9 +124,25 @@
                             class="bi bi-apple"></i></button>
                 </div>
 
-                <p class="text-muted small mb-0">No account? <a href="register.html"
-                        class="text-primary fw-bold text-decoration-none border-bottom border-primary">Create
-                        one</a></p>
+                <div class="pt-3 border-top border-secondary border-opacity-10">
+                    <p class="text-muted small mb-0">No account? <a href="register.html"
+                            class="text-primary fw-bold text-decoration-none border-bottom border-primary">Create
+                            one</a></p>
+                </div>
+
+                <script>
+                    function togglePassword(inputId, btn) {
+                        const input = document.getElementById(inputId);
+                        const icon = btn.querySelector('i');
+                        if (input.type === 'password') {
+                            input.type = 'text';
+                            icon.classList.replace('bi-eye', 'bi-eye-slash');
+                        } else {
+                            input.type = 'password';
+                            icon.classList.replace('bi-eye-slash', 'bi-eye');
+                        }
+                    }
+                </script>
             </div>
         </div>
     </div>

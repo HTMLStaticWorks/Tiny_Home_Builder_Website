@@ -209,6 +209,9 @@
                     <a href="#messages" class="sidebar-link text-decoration-none" data-bs-toggle="pill" role="tab">
                         <i class="bi bi-chat-dots"></i> Messages <span class="badge bg-danger ms-auto">2</span>
                     </a>
+                    <a href="#editor" class="sidebar-link text-decoration-none" data-bs-toggle="pill" role="tab">
+                        <i class="bi bi-pencil-square"></i> Project Notes
+                    </a>
                     <a href="#payments" class="sidebar-link text-decoration-none" data-bs-toggle="pill" role="tab">
                         <i class="bi bi-credit-card"></i> Payments
                     </a>
@@ -219,7 +222,7 @@
 
                 <div class="mt-auto pt-4">
                     <hr>
-                    <a href="login.html" class="sidebar-link text-danger text-decoration-none">
+                    <a href="index.html" class="sidebar-link text-danger text-decoration-none">
                         <i class="bi bi-box-arrow-left"></i> Logout
                     </a>
                 </div>
@@ -494,6 +497,50 @@
                             </div>
                             <button class="btn btn-primary px-4 py-2 mb-2">Make Payment</button>
                             <button class="btn btn-outline-secondary d-block mt-3">View Full Invoice History</button>
+                        </div>
+                    </div>
+
+                    <!-- Content Editor Tab (Project Notes) -->
+                    <div class="tab-pane fade" id="editor" role="tabpanel">
+                        <div class="custom-card bg-white border-0 shadow-sm">
+                            <h5 class="mb-4">My Project Notes & Inspiration</h5>
+                            <p class="text-secondary small mb-4">Use this space to keep track of your design ideas, links to furniture you like, or questions for our team.</p>
+                            
+                            <div class="mb-4">
+                                <div class="btn-toolbar mb-2" role="toolbar">
+                                    <div class="btn-group me-2" role="group">
+                                        <button type="button" class="btn btn-outline-secondary btn-sm"><i class="bi bi-type-bold"></i></button>
+                                        <button type="button" class="btn btn-outline-secondary btn-sm"><i class="bi bi-type-italic"></i></button>
+                                        <button type="button" class="btn btn-outline-secondary btn-sm"><i class="bi bi-link-45deg"></i></button>
+                                    </div>
+                                    <div class="btn-group" role="group">
+                                        <button type="button" class="btn btn-outline-secondary btn-sm"><i class="bi bi-list-ul"></i></button>
+                                        <button type="button" class="btn btn-outline-secondary btn-sm"><i class="bi bi-list-ol"></i></button>
+                                    </div>
+                                </div>
+                                <textarea class="form-control" rows="12" placeholder="Start writing here..."></textarea>
+                            </div>
+                            
+                            <div class="text-end">
+                                <button class="btn btn-primary px-4 rounded-pill">Save Changes</button>
+                            </div>
+
+                            <hr class="my-5">
+                            <h6 class="fw-bold mb-3">Saved Inspirations</h6>
+                            <div class="row g-3">
+                                <div class="col-md-3">
+                                    <div class="border rounded-4 overflow-hidden position-relative group">
+                                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=200&h=150&fit=crop" class="w-100" alt="Kitchen">
+                                        <button class="btn btn-light btn-sm rounded-circle position-absolute top-0 end-0 m-2 shadow-sm"><i class="bi bi-x"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="border rounded-4 border-dashed d-flex flex-column align-items-center justify-content-center p-3 text-secondary small" style="height: 112px; border: 2px dashed #ddd;">
+                                        <i class="bi bi-plus-lg fs-4 mb-2"></i>
+                                        Add Photo
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
